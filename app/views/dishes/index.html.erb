@@ -1,0 +1,21 @@
+<section class="section">
+  <div class="owl-carousel">
+    <% @dishes_support.dishes_data.each do |dish_data| %>
+        <div class="slide">
+          <span class="hot"></span>
+          <%= link_to dish_path(dish_data.dish),
+            title: dish_data.dish.name, target:"_self" do %>
+            <%= image_tag dish_data.dish.image %>
+          <% end %>
+          <%= link_to dish_path(dish_data.dish),
+            class:"link", target:"_self" do %>
+            <%= dish_data.dish.name %> <i class="fa fa-angle-double-right"></i>
+          <% end %>
+        </div>
+    <% end %>
+  </div>
+  <div id="dishes" class="wrapper main-content">
+    <%= render "dish", dishes_support: @dishes_support %>
+  </div>
+  <br>
+</section>

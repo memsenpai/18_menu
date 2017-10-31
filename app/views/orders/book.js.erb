@@ -1,0 +1,7 @@
+$('.order_cart').replaceWith('<%= j render template: "tables/index" %>');
+$('.table-section.go-to-book').removeClass('go-to-book full-height');
+$('.table-section').css('background', 'white');
+tables_book();
+var table_booking = $('.row .table-choosing-step');
+table_booking.height(table_booking.height() * 0.7);
+table_booking.css('background-color', '#f5f5f5');

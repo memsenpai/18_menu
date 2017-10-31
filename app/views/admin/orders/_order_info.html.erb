@@ -1,0 +1,89 @@
+<div class="col-md-12">
+  <div class="col-md-4 orders-info orders-info-customer">
+    <div class="orders-header">
+      <div class="orders-header-title">
+        <i class="fa fa-info-circle"></i>
+        <%= t "admin.bills.customer_infomation" %>
+      </div>
+    </div>
+    <div class="orders-content">
+      <div class="orders-content-list-info">
+        <div class="orders-content-info">
+          <b class="orders-content-info-title">
+            <i class="fa fa-id-card"></i>
+            <%= t "admin.bills.customer_code" %>:
+          </b>
+          <span> <%= order.customer.code %></span>
+        </div>
+        <div class="orders-content-info">
+          <b class="orders-content-info-title">
+            <i class="fa fa-user"></i>
+            <%= t "admin.bills.customer_name" %>:
+          </b>
+          <span class="customer-id"
+            data-customer-id="<%= order.customer.id %>">
+            <%= order.customer.name %>
+          </span>
+        </div>
+        <div class="orders-content-info">
+          <b class="orders-content-info-title">
+            <i class="fa fa-mobile"></i> <%= t "admin.bills.phone" %>:
+          </b>
+          <span> <%= order.customer.phone_num %></span>
+        </div>
+        <div class="orders-content-info">
+          <b class="orders-content-info-title">
+            <i class="fa fa-envelope"></i> <%= t "admin.email" %>:
+          </b>
+          <span> <%= order.customer.email %></span>
+       </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 orders-info orders-info-order">
+    <div class="orders-header">
+      <div class="orders-header-title">
+        <i class="fa fa-info-circle"></i>
+        <%= t "admin.bills.order_infomation" %>
+      </div>
+    </div>
+    <div class="orders-content">
+      <div class="orders-content-list-info">
+        <div class="orders-content-info">
+          <b class="orders-content-info-title">
+            <i class="fa fa-id-card"></i>
+            <%= t "admin.orders.order.code" %>:
+          </b>
+          <span class="order-id"
+            data-order-id="<%= order.id %>"><%= order.code %></span>
+        </div>
+        <div class="orders-content-info">
+          <b class="orders-content-info-title">
+            <i class="fa fa-table"></i>
+            <%= t "admin.orders.order.table" %>
+          </b>
+          <span>
+            <%= order.capacity %>
+          </span>
+        </div>
+        <div class="orders-content-info">
+          <b class="orders-content-info-title">
+            <i class="fa fa-users"></i>
+            <%= t "admin.orders.order.time_in" %>:
+          </b>
+          <span> <%= order.time_in %></span>
+        </div>
+        <div class="orders-content-info">
+          <b class="orders-content-info-title">
+            <i class="fa fa-location-arrow"></i>
+            <%= t "admin.orders.order.discount" %>:
+          </b>
+          <span class="customer-discount"
+            data-customer-discount="<%= order.discount %>">
+            <%= order.discount %>%
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

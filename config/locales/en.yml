@@ -1,0 +1,809 @@
+en:
+  currency: $
+  quote_rate: "You like this ?"
+  are_you_sure_delete: Are you sure delete!
+  new_order: "Has something change"
+  time_in_email: "Time"
+  name_promo: "Name"
+  id: ID
+  phone_num: Phone Number
+  time_default: "%H:%M:%S"
+  day_default: "%Y/%m/%d"
+  date_default: "%b %d %Y"
+  date_full: "%Y/%m/%d %H:%M:%S"
+  opition: Opition
+  available: Available
+  running: Running
+  stoped: Stoped
+  no_content: No content
+  discount: Discount
+  discount_input: "Input code"
+  hello: "Hello world"
+  res: Restaurant
+  brand: "Menu Online"
+  errors:
+    update_customer: Update customer faild!
+    create_customer: Create customer faild!
+    customer_code_not_exists: Your code is not exists!
+    you_cant_booking: You can't booking!
+  pages:
+    book_table_online:
+      book_table: "Book table"
+    slogan:
+      view_menu: "View menu"
+  home:
+    home: Home
+    menu: Menu
+    combo: Combo
+    book: Booking
+    contact: Check order
+    staff: Staff Only
+    great_food: Great food. Tastes good.
+    host_combo: "__ HOTTEST COMBO __"
+    discount: "Discount: "
+    book_online: "Book Online"
+    reservations: "Reservations"
+    for_reservations: "for reservations &amp; enquiries"
+    tel: "010-020-0780"
+    location: "Location"
+    review_delicions: "123 Delicious Street,"
+    san_francisco: "San Francisco,"
+    ca_10110: "CA 10110"
+    our_most: "__ Our most loved dishes __"
+    description: "Learn from the past, set vivid, detailed goals for the future,
+      and live in the only moment of time over which you have any control: now.
+      Optimism is the faith that leads to achievement. Nothing can be done without
+      hope and confidence. If you can dream it, you can do it. Do it now, not tomorrow.
+      Always continue the climb. It is possible for you to do."
+  footer:
+    about: About the house
+    about_content: Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+      sed diam nonummy nibh euismod tincidunt ut laoreet.
+      Dolore magna aliquam erat volutpat ipsum.
+    contact: Contact Detail
+    contact_content1: 123 Delicious Street, San Francisco, CA 10110
+    contact_content2: 010-020-0780
+    contact_content3: hello@company.com
+    open: Opening Hours
+    open_content1: Monday - Firday
+    open_content2: 11:00 AM - 10:00 PM
+    open_content3: Saturday - Sunday
+    open_content4: 10:00 AM - 09:00 PM
+  form:
+    login: This form contain %{count}
+    error: error
+    errors: errors
+    _error: This form contain
+    button: Login
+    lost_pass: Lost your password?
+  flash:
+    search_fail: Combo not found.
+    guest:
+      find_fail: Guest not found.
+    dish:
+      find_fail: Dish not found.
+      destroy: Deleted dish successfully!
+      create_success: Created dish successfullly!
+      update_success: Updated dish successfully!
+      destroy_success: Deleted dish successfully!
+      destroy_fail: Failed. Something's wrong.
+    combo:
+      find_fail: Dish not found.
+      combo_fails: Combo not found.
+      search_fail: Combo not found.
+      create_success: Created combo successfullly!
+      update_success: Updated combo successfully!
+      destroy_success: Deleted combo successfully!
+      destroy_fail: Failed. Something's wrong.
+    category:
+      find_fail: Category not found.
+      create_success: Created category successfully!
+      update_success: Updated category successfully!
+      delete_success: Deleted category successfully!
+      delete_fail: Failed. Something's wrong.
+    order:
+      find_fail: Order not found.
+      create_fail: Check again!
+      check_your_order: Check your order!
+      create_success: Created order successfully!
+      update_success: Updated order successfully!
+      delete_success: Deleted order successfully!
+      delete_fail: Failed. Something's wrong.
+      cant_find_order: Can't find any order with this infomation!
+      find_order: Found order successfully!
+  admin:
+    promo: Promo
+    error_not_administrator: "You are not Administrator"
+    cooking: "Cooking"
+    cookingstt: "Cooking status"
+    chef: "Chef"
+    waiter: "Waiter"
+    receptionist: "Receptionist"
+    screen: Screen
+    discount: Discount
+    combo: Combo
+    menu: Menu
+    export: Export
+    category: Category
+    dish: Dish
+    orderr: Order
+    manage: Manage
+    order: Check Order
+    bill: Bills
+    profile: Profile
+    setting: Setting
+    logout: Log out
+    login: Login
+    login2: (only for Staff)
+    error_log: Please log in
+    error_wrongpass: Wrong password or email
+    email: Input email
+    pass: Input password
+    staff: Staff
+    not_exist: This account is not exist.
+    success: Success update info
+    fail: Failed update info
+    edit: Edit profile
+    name: Input name
+    newpass: Input new password
+    newpass2: Re-input new password
+    oldpass: Confirm password to update
+    update: Update profile
+    change_pass: Change Password
+    search: Search
+    user: Users
+    email: Email
+    date_created: Date create
+    role: Role
+    staff_management: Staff account management
+    change_role: Change roles for employees
+    roles: Please chose role
+    current_role: Current role
+    needing: Needing
+    cooking: Cooking
+    cancel: Cancel
+    done: Done
+    dashboard: Dashboard
+    membership_coupons:
+      name: Name
+      money_paid: Money paid
+      status: Status
+      index:
+        title: Membership Coupons
+    customers:
+      membership_level: Membership Level
+      customer_name: Customer Name
+      customer_email: Customer Email
+      customer_phone: Customer Phone
+      customer_code: Customer Code
+      customer_blacklist: Black list
+      index:
+        title: Customer Manager
+    bills:
+      money_paid: Money paid
+      customer_info: Customer Info
+      bill_info: Bill Info
+      email: Email
+      mobile: Mobile
+      phone: Phone
+      item_type: Item type
+      name_item: Name item
+      quantity: Quantity
+      price: Price
+      discount: Discount
+      voucher: Voucher
+      membership: Membership
+      total: Total
+      total_price: Total price
+      export_exel: Export Excel
+      bill_code: "Bill code"
+      customer_infomation: "Customer Infomation"
+      order_infomation: "Order Infomation"
+      customer_code: "Customer code"
+      customer_name: "Customer name"
+      time_created: "Time created"
+      action: "Action"
+      details: "Details"
+      btn_apply: "Apply"
+      show:
+        title: Bill detail
+      index:
+        title: Bills Manager
+    dishes:
+      index:
+        title: Dishes manager
+        name: Dish
+        add_dish_button: Create new dish
+        search_fail: Not found.
+      new:
+        title: Create dish
+      edit:
+        title: Edit dish
+      show:
+        title: Dish information
+        name: "Name:"
+        price: "Price:"
+        money: $
+        image: "Image:"
+        description: "Description:"
+        order: "Sort order:"
+        active: "Active:"
+        yes: Yes
+        no: No
+        edit_dish: Edit dish
+        categories: Categories
+      form:
+        name: "Dish name:"
+        price: "Price:"
+        description: Description
+        image: Image link
+        active: Active
+        yes: Yes
+        no: No
+        categories: Categories
+      dish:
+        search: Search
+        input_keyword: Search for dish name or description
+        price: Price
+        status: Active
+        order: No.
+        all: All
+        yes: Available
+        no: Unavailable
+        opition: Opition
+        money: $
+        yes: Yes
+        no: No
+        view_dish_button: View
+        add_dish_button: Add
+        edit_dish_button: Edit
+        delete_dish_button: Delete
+        delete_warning: Are you sure?
+    combos:
+      index:
+        title: Combos manager
+        add_combo_button: "Create new Combo"
+      new:
+        title: Create combo
+        name: "Combo name:"
+        description: "Description:"
+      show:
+        from: "From"
+        to: "To"
+        title: Combo information
+        category: Category
+        no: No.
+        opition: Opition
+        dish: Dish name
+        name: Combo
+        dishes: LIST DISHES
+        description: Description
+        edit_combo_button: Edit combo
+        delete_dish_button: Delete
+        delete_warning: Are you sure?
+        add_to_cart: Add to cart
+      edit:
+        from: "From"
+        to: "To"
+        title: Edit combo
+        delete_combo_button: Delete this combo
+        description: "Description"
+        name: "Name"
+        discount: "Discount"
+        image: "Image"
+      form:
+        create_combo_button: Create combo
+        update_combo_button: Update combo
+        dishes: "Choose dishes:"
+      combo:
+        search: Search
+        input_keyword: Search for combo name or description
+        name: Name
+        order: No.
+        discount: Discount
+        view_combo_button: Details
+        edit_combo_button: Edit
+        delete_combo_button: Delete
+        delete_warning: Are you sure?
+        dishes: View dishes
+        add_combo: + Add combo
+    discount_codes:
+      index:
+        discount: Discount
+        quantity: Quantity
+        generate: Genarate
+        code_status: Code Status
+      item_discount_code:
+        order: Order
+        code: Code
+        discount: Discount
+        status: Status
+        option: Option
+      modal_edit:
+        edit_discount: Edit Discount
+        save: Save
+    categories:
+      index:
+        title: Categories manager
+        add_button: Add new category
+        search_fail: Not found
+      form:
+        name: "Category name:"
+        description: "Description:"
+        dishes: "Dishes:"
+      show:
+        dish: Dish name
+        opition: Opition
+        add_dish_button: Add dish
+        empty: This category hasn't any dish.
+        title: Category information
+        name: Category
+        opition: Opition
+        category: Category
+        description: Description
+        dishes: LIST DISHES
+        no: "No."
+        edit_category_button: Edit category
+      edit:
+        title: Edit category
+      new:
+        title: Create category
+      category:
+        order: No.
+        name: Category
+        opition: Opition
+        search: Search
+        input_keyword: Search for category name or description
+        view_button: Details
+        edit_button: Edit
+        delete_button: Delete
+        delete_warning: Are you sure?
+        add: + Add category
+    orders:
+      index:
+        title: Orders manager
+        add_order_button: Add new order
+      show:
+        title: Order details
+      new:
+        title: Create order
+      edit:
+        title: Edit order
+      form:
+        code: Order code
+        discount: Discount
+        customer_name: Customer name
+        capacity: Capacity
+        pickdate: Pick a date
+        date: Date
+        time_in: From
+        time_out: To
+        time: Time
+        status: "Status:"
+        approved: Approved
+        uncheck: Uncheck
+        declined: Declined
+        serving: Serving
+        done: Done
+      order:
+        table: Table
+        search: Search
+        input_keyword: Search for order code or customer name
+        choose: "--- Choose ---"
+        date: "Date:"
+        check: "Status:"
+        code: Code
+        discount: Discount
+        time_in: Time in
+        table: Table
+        capacity: Capacity
+        phone: Phone
+        date: Date
+        from: From
+        to: To
+        status: Status
+        all: All
+        approved: Approved
+        canceled: Pending
+        no_table: Not order
+        action: Action
+        success: You have created an order
+        thank: Thanks for order and have a great day!
+        order_info: Order information
+        code: Code
+        customer_name: Customer Name
+  button:
+    search: Search
+    close: Close
+    new: New
+    create: Create
+    save: Save
+    detail: Detail
+    view: Details
+    add: Add
+    update: Update
+    edit: Edit
+    delete: Delete
+    cancel: Back
+    clear: Clear form
+    all_dish: View all dishes
+    delete_warning: Are you sure?
+  dishes:
+    index:
+      title: OUR MENU
+      slogan: Now That Your Tastes Have Grown Up!
+      money: $
+      not_found: Sorry, dish not found
+    show:
+      title: Dish information
+      field: Field
+      value: Value
+      name: Dish
+      price: Price
+      money: $
+      image: Image
+      description: Description
+      order: "Sort order:"
+      active: "Active:"
+      yes: Yes
+      no: No
+      available: Available
+      cart: Add to Cart
+      buy: Book Table Now
+      notavai: See you soon
+      social: Awesomecity
+      add_to_cart: Add to card
+    dish:
+      money: $
+      submit: Add to cart
+      view: View detail
+      search: Search
+      input_keyword: Search for dish name or description
+      order: No.
+      available: Available
+      unavailable: Unavailable
+      all: All
+      sort: "Sort by:"
+      check: "Check available:"
+  combos:
+    index:
+      viewdes: View Detail
+      continue: ... (continued)
+      from: "Only from"
+      to: "to "
+    show:
+      readmore: Read more
+      viewimage: Image
+      include: "Combo includes:"
+      condition: "Terms & conditions:"
+      discount: "Discount "
+      bill: " for total bill."
+      valid: Valid from
+      to: "to "
+      close: Close
+      add_to_cart: Add to cart
+    combo:
+      money: $
+      view: View detail
+      search: Search
+      input_keyword: Search for combo name or description
+      order: No.
+      available: Available
+      unavailable: Unavailable
+      all: All
+      sort: "Sort by:"
+      check: "Check available:"
+      readmore: Read More
+      off: " off"
+      deal: View Deal
+      continue: ... (continued)
+      valid_from: " Valid from"
+      valid_to: " to"
+    showmore: Show more
+    showless: Show less
+    search:
+      search: Search
+      input_keyword: Search for combo name or description
+  order:
+    status: "Select a status"
+    empty_item: "There are no items in your shopping cart.  Please go menu and add some items to your cart."
+    delete: Delete
+    delete_alert: ! "Are you sure you wish to delete the product %{product_name} from your cart?"
+    unit_price: "Unit price  :"
+    update_quantity: Update Quantity
+    total_price: "Total price :"
+    quantity: "Quantity:"
+    cart_text: "%{cart_size} items ( %{total_price}$ )"
+    not_valid_or_not_active: "is not valid or is not active."
+    not_valid_value: "is not a valid order."
+    not_valid: "not valid."
+    customer_code: "Customer code:"
+    order_code: "Order code:"
+    approver: "APPROVED"
+    your_order_has_approved: "Your order has approved. Welcome to Menu"
+    order_completed: "ORDER COMPLETED"
+    thank_for_order: "Thank for your order. We will check your order as soon as possible."
+    ready_to_order: "READY TO ORDER"
+    you_arent_order_table: "You aren't order table."
+    ready_to_order: "Ready to order."
+    table_booked: "Table booked."
+    awesomecity_approved: "Menu approved."
+    awesomecity_done: "Menu done."
+    your_informations: "Your informations"
+    name: "Name: "
+    email: "Email: "
+    phone: "Phone: "
+    customer_id: "Customer ID: "
+    order_infomations: "Order infomations"
+    table_number: "Table number: "
+    date: "Date: "
+    want_to_book: "Want to book another table?"
+    create_new_order: "Create new order"
+    order_items: "Order items"
+    order_status: "Order status:"
+    your_email: "Your email"
+    your_order_code: "Your order code"
+    submit: "Submit"
+    export_bill: "Export bill"
+    payment: "Check bill"
+  helpers:
+    submit:
+      dish:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+      combo:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+      category:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+      order:
+        create: Create %{model}
+        delete: Delete %{model}
+        update: Save changes to %{model}
+  select:
+    em: Early Morning (08:00 - 10:00)
+    lm: Later Morning (10:00 - 12:00)
+    ea: Early Afternoon (13:00 - 15:00)
+    la: Later Afternoon (15:00 - 17:00)
+    ee: Early Evening (17:30 - 19:30)
+    le: Later Evening (20:00 - 22:00)
+    ta: Not important
+    tm: Middle of room
+    ts: Side of room
+    to: Outside
+    available: Available
+    used: Used
+    no_need: No need
+    needing: Needing
+    cooking: Cooking
+    cooked: Cooked
+    served: Served
+    cancel: Cancel
+    choose_status: Choose Status
+  reserve:
+    quantity: Please choose capacity
+    table: Please select prefer table
+    date: Choose date
+    time: Please choose your time
+    submit: Finish Booking Table
+    find: Find Table
+    table: Please choose table
+  table:
+    confirm: Confirm
+    pick_time: Pick time
+    book_table: Book table
+    reservation: Reservation
+    available_table: Available Table
+    confirm_reservation: Confirm reservation
+    avail: Table is Available
+    unavail: Table is Unavailable
+    alert: Alert
+    alert1: Please fill all field to select available table!
+    alert2: Please select your prefer table!
+    modal_mes1: Input your information to complete booking
+    modal_mes2: Please confirm your order
+    modal_mes3: All item in Cart will be add to this order!
+    modal_mes4: And you can change it in Check Order
+    modal_mes5: Submit info
+    modal_mes6: Confirm Order
+    modal_mes7: Cancel
+    submit: Submit
+    already_code: You already have the customer code
+    new_customer: I'm a new customer
+    input_your_guest_code: Input your guest code
+    register_guest_code: Register guest code
+    table1: 1
+    table2: 2
+    table3: 3
+    table4: 4
+    table5: 5
+    table6: 6
+    table7: 7
+    table8: 8
+    table9: 9
+    table10: 10
+    table11: 11
+    table12: 12
+    table13: 13
+    table14: 14
+    table15: 15
+    table16: 16
+    table17: 17
+  customer:
+    fail_create: "Create Guest Failed!!"
+    success_create: "Create Guest Success"
+    guest_id: "Guest ID: "
+    not_found: "Find not found!"
+  staff_order:
+    membership_coupon: Membership Coupon
+    edit_dish_of_order: Edit dish of order
+    add_dish_to_order: Add dish to order
+    search_by_code: Search by code
+    confirmed: Confirmed
+    cancel: Cancel
+    order_confirm: Order informations
+    phone_num: Phone number
+    email: Email
+    table_id: Table ID
+    add_dish: "+ Add dish"
+    add_combo: "+ Add combo"
+    product: Product
+    type: Type
+    original_price: Original Price
+    quantity: Quantity
+    subtotal: Subtotal
+    total_notdiscount: Total (Not Discount)
+    voucher_discount: Voucher discount
+    total: Total
+    success_add: "Added successfully!"
+    success_update: "Updated successfully!"
+    success_delete: "Delete successfully!"
+    something_wrong: "Something wrong!"
+    order_dish: Order Dish
+    order_combo: Order Combo
+    original_price: Original Price
+    voucher_add: Add Voucher
+    discount_code: Discount Code
+    input_code: Input your discount code
+    your_code: Your CODE
+    cooked: Cooked
+    cooking: Cooking
+  discounts:
+    input_code: "Code"
+  discount:
+    reenter: "Please re-enter correct code!"
+    used_code: "This code has been used!"
+    discount: "This voucher has"
+    discount2: "% off"
+    choose_code: "Choose this code"
+    all: "All discount"
+    input: "Input code"
+    generate: "Generate new code"
+  discount: Discount
+  order_detail:
+    new_dish: Choose a dish
+    new_combo: Choose a combo
+    save: Save
+  status:
+    active_txt: Active
+    notactive_txt: Notactive
+    active: active
+    notactive: notactive
+    uncheck: "Uncheck"
+    approved: "Approved"
+    declined: "Declined"
+    serving: "Serving"
+    done: "Done"
+  staff_role:
+    administrator: Administrator
+    chef: Chef
+    waiter: Waiter
+    receptionist: Receptionist
+  staff_users:
+    new_staff: Create new staff
+  promo:
+    create:
+      success: Add successfully
+      notice: Something wrong
+    update:
+      success: Update successfully
+      notice: Something wrong
+    destroy:
+      success: Destroy successfully
+      notice: Something wrong
+    input_keyword: Search for promo dish
+    search: Search
+    promo: Promo
+    title: Promo
+    day: Day
+    name_dish: Name Dish
+    description: Description Dish
+    time2: "%{start} to %{end}"
+    day2: "%{start} to %{end}"
+    edit_promo_button: Edit Promo Button
+    dish_id: Dish ID
+    discount: Discount
+    start_day: Start Day
+    end_day: End Day
+    start_time: Start Time
+    end_time: End Time
+    not_found: Promo not found
+  book_table: "Book Table Now!"
+  dashboard:
+    fd: "From date:"
+    td: "To date:"
+    most: Most
+    least: Least
+    fetch: Fetch
+    analytics: Analytics
+    moneyincome: Money Income
+    topdish: Top order dishes
+    topcombo: Top order combos
+    toptime: Most ordered time
+    category: Category
+    dish: Dish
+    staff: Staff
+    dish2: dish
+    cate: category
+    combo: Combo
+    staff2: staff
+    combo2: combo
+    income: Income
+    timein: Time in
+    orderchart:
+      series:
+        name: Dish
+        statistics: Statistics
+      title:
+        text: Number of order dishes
+      orderedtimes: Ordered times
+      xaxistext: (Order) times
+      pointformat: Ordered <b>%{point}</b> times
+    combochart:
+      series:
+        name: Order
+        statistics: Statistics
+      title:
+        text: Number of order combos
+      orderedtimes: Ordered times
+      xaxistext: (Order) times
+      pointformat: Ordered <b>%{point}</b> times
+    incomechart:
+      title:
+        text: Income
+      yaxis:
+        title: "Money($)"
+  reject_order: "Your order is rejected!!!"
+  reject_order_info: "Order information"
+  adv_promo: "Dish %{dish} will have discount from %{from} to %{to}"
+  dish_description: "Description:"
+  dish_price_origin: "Origin price:"
+  dish_price_discount: "Discount up to:"
+  signature: "We allway wellcome your!!"
+  datetime_promo: "Each day from %{day_start} to %{day_end}
+    in %{time_start} to %{time_end}"
+  fromat_default: "%Y/%m/%d %H:%M"
+  time_history: "Time"
+  describe_history: "Describe"
+  brand_history: "Type"
+  descripbe_history_item: "%{status} quantity:%{quantity}"
+  button_delete_show_order: "Delete"
+  button_cancel_show_order: "Cancel"
+  quantity_chef: "Quantity:"
+  status_chef: "Status:"
+  submit_chef: "Submit"
+  booking:
+    tableisavailable: is available table
+    tableisunavailable: is unavailable table
+    tableischoosed: is the table you choosed
+  not_exist_items: "There are currently no orders"
+  confirm:
+    txt_yes: "YES"
+    txt_no: "NO"
+  txt_in: "IN"
+  txt_to: "TO"
+  txt_from: "FROM"

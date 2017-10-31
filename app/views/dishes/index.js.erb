@@ -1,0 +1,5 @@
+$('#dishes').html('<%= j render "dish", dishes_support: @dishes_support %>');
+$('#pagination').html('<%= j paginate(@dishes_support.dishes_search,
+  remote: true).to_s %>');
+$('#counter').html('<%= j page_entries_info(@dishes_support.dishes_search,
+  remote: true).to_s %>');

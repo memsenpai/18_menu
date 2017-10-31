@@ -1,0 +1,9 @@
+<%= search_form_for [:admin, bills.search],remote: true,
+  method: :get do |f| %>
+  <div class="bills">
+    <%= render "form", bills: bills %>
+  </div>
+  <div id="pagination" class="apple-pagination">
+    <%= paginate bills.bills_search, remote: true %>
+  </div>
+<% end %>

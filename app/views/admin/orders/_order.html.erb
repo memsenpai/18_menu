@@ -1,0 +1,86 @@
+<%= search_form_for [:admin, order.search], remote: true, method: :get do |f| %>
+  <div class="b10 display-flex">
+    <%= f.text_field :code_cont,
+      class:"pj-form-field pj-form-field-search w350",
+      placeholder: t("staff_order.search_by_code") %>
+      <%= link_to t(".all"), {q: nil, remote: true},
+        class:"pj-button btn-all"%>
+      <%= link_to t("admin.orders.form.uncheck"),
+        {type: t("admin.orders.form.uncheck")},
+        remote: true, class:"pj-button btn-all" %>
+      <%= link_to t("admin.orders.form.approved"),
+        {type: t("admin.orders.form.approved")},
+        remote: true, class:"pj-button btn-all" %>
+      <%= link_to t("admin.orders.form.declined"),
+        {type: t("admin.orders.form.declined")},
+        remote: true, class:"pj-button btn-all" %>
+      <%= link_to t("admin.orders.form.serving"),
+        {type: t("admin.orders.form.serving")},
+        remote: true, class:"pj-button btn-all" %>
+      <%= link_to t("admin.orders.form.done"),
+        {type: t("admin.orders.form.done")},
+        remote: true, class:"pj-button btn-all" %>
+  </div>
+  <div class="pj-form-filter-advanced col-sm-12">
+    <span class="pj-menu-list-arrow"></span>
+    <div class="pj-form pj-form-search">
+      <div class="w350">
+        <p>
+          <%= f.label :date_from, class: "date" %>
+          <%= f.text_field :day_gteq,
+            class: "datepicker pj-form-field pointer w150 f-text f-calendar" %>
+        </p>
+        <p>
+          <%= f.label :date_to, class: "date" %>
+          <%= f.text_field :day_lteq,
+            class: "datepicker pj-form-field pointer w150 f-text f-calendar" %>
+        </p>
+      </div>
+      <div class="w350">
+        <p>
+          <%= f.label :table_id, class: "title" %>
+          <span class="inline-block">
+            <%= f.collection_select :table_id_eq, tables, "id", "id",
+              {include_blank: t(".choose")},
+              {class: "btn btn-default pj-form-field w180"} %>
+          </span>
+        </p>
+        <p>
+          <%= f.label :name, class: "title" %>
+          <span class="inline-block">
+            <%= f.text_field :customer_name_cont,
+              class: "pj-form-field w180" %>
+          </span>
+        </p>
+        <p>
+          <label class="title">&nbsp;</label>
+          <%= f.submit  t(".search"), class: "pj-button" %>
+          <%= link_to t("staff_order.cancel"), {remote: true},
+            class: "pj-button", id: "clear" %>
+        </p>
+      </div>
+      <div class="w350">
+        <p>
+          <%= f.label :phone, class: "title" %>
+          <span class="inline-block">
+            <%= f.text_field :customer_phone_num_cont,
+              class: "pj-form-field w180" %>
+          </span>
+        </p>
+        <p>
+          <%= f.label :email, class: "title" %>
+          <span class="inline-block">
+            <%= f.text_field :customer_email_cont,
+              class: "pj-form-field w180" %>
+          </span>
+        </p>
+      </div>
+      <br class="clear_both">
+    </div>
+  </div>
+  <br>
+  <%= render "order_content", order: order %>
+  <div class="apple-pagination">
+    <%= paginate order.orders_search, remote: true %>
+  </div>
+<% end %>
