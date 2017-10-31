@@ -1,0 +1,42 @@
+<table class="table-order table default-dg-table">
+  <thead>
+    <tr>
+      <th class="left width-90">
+        <%= sort_link order.search, :code, t(".code"), {},
+          {remote: true, method: :get} %>
+      </th>
+      <th class="left width-170">
+        <%= sort_link order.search, :date, t(".date"), {},
+          {remote: true, method: :get} %>
+      </th>
+      <th class="left width-110"><%= t "admin.orders.form.time" %></th>
+      <th class="left width-170">
+        <%= sort_link order.search, :customer_name, t(".customer_name"), {},
+          {remote: true, method: :get} %>
+      </th>
+      <th class="text-center width-90"><%= t ".table" %></th>
+      <th class="text-center width-90">
+        <%= sort_link order.search, :table_capacity, t(".capacity"), {},
+          {remote: true, method: :get} %>
+      </th>
+      <th class="text-center width-90">
+        <%= sort_link order.search, :discount, t(".discount"), {},
+          {remote: true, method: :get} %>
+      </th>
+      <th class="text-center width-90 text-center">
+        <%= sort_link order.search, :status, t(".status"), {},
+          {remote: true, method: :get} %>
+      </th>
+      <th class="actions" colspan="2"><%= t ".action" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if order.orders_search.any? %>
+      <% order.orders_search.each do |order| %>
+        <% if order.day %>
+          <%= render "order_index", order: order %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

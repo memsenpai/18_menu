@@ -1,0 +1,54 @@
+<ul class="nav navbar-nav navbar-right animated wow"
+  data-wow-delay="0.1s">
+  <% if can? :manage, :all %>
+    <li class="dropdown smoothScroll animated fadeInLeft wow">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <%= t "admin.manage" %>
+        <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <% if can? :view, Category %>
+          <li>
+            <%= link_to t("admin.category"), admin_categories_path,
+              class: "smoothScroll animated fadeInLeft wow",
+              "data-wow-delay": "0.1s", method: :get %>
+          </li>
+        <% end %>
+        <% if can? :view, Dish %>
+          <li>
+            <%= link_to t("admin.dish"), admin_dishes_path,
+              class: "smoothScroll animated fadeInLeft wow",
+              "data-wow-delay": "0.1s", method: :get %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end  %>
+  <% if can? :update, Order %>
+    <li class="dropdown smoothScroll animated fadeInLeft wow">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <%= t "admin.orderr" %>
+        <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><%= link_to t("admin.order"), admin_orders_path,
+          class: "smoothScroll animated wow",
+          "data-wow-delay": "0.1s", method: :get %></li>
+        <li><%= link_to t("admin.bill"), admin_bills_path,
+          class: "smoothScroll animated fadeInLeft wow",
+          "data-wow-delay": "0.1s", method: :get %></li>
+      </ul>
+    </li>
+  <% end %>
+  <li class="dpdwn">
+    <%= link_to t("admin.profile"), staffs_path,
+      class: "smoothScroll animated wow",
+      "data-wow-delay": "0.1s", method: :get %>
+    <ul class="nav">
+      <li><%= link_to t("admin.setting"), edit_staffs_path,
+        class: "smoothScroll animated wow",
+        "data-wow-delay": ".1s", method: :get %></li>
+      <li><%= link_to t("admin.logout"), logout_path,
+        class: "smoothScroll animated wow",
+        "data-wow-delay": ".1s", method: :delete %></li>
+    </ul>
+  </li>
+</ul>

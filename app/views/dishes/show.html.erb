@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<section class="section go-to-book">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="col-sm-7">
+      <div class="box-left">
+        <div class="item-preview">
+          <%= image_tag @dish.image, alt: "img" %>
+          <br>
+          <%= social_share_button_tag @dish.name,
+            desc: "#{@dish.description}", via: t(".social") %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="sidebar-right">
+        <div class="info-panel">
+          <div class="info-dish">
+            <div class="info-main">
+              <span class="info-name"><%= @dish.name %></span>
+              <div class="info-price heading size-xxl">
+                <b class="t-currency">
+                  <%= number_to_currency @dish.price %>
+                </b>
+              </div>
+            </div>
+            <div class="info-support">
+
+              <%= @dish.description %>
+            </div>
+            <div class="info-support">
+              <% if @dish.is_available? %>
+                <div class="check">
+                  <span class="fa-stack fa-lg fa-fw">
+                    <i class="fa fa-square-o fa-stack-2x"></i>
+                    <i class="fa fa-check fa-stack-1x"></i>
+                  </span>
+                  <label><%= t ".available" %></label>
+                </div>
+                <%= form_for :order_dish, remote: true do |f| %>
+                  <div class="input-group">
+                    <%= f.number_field :quantity, value: 1, class: "form-control",
+                      id: "quantity-dish-order-#{@dish.id}", min: 1 %>
+                    <%= f.hidden_field :dish_id, value: @dish.id, class: "dish-id" %>
+                    <div class="input-group-btn">
+                      <div class="btn btn-primary button-style add-dish-to-cart">
+                        <%= t ".add_to_cart" %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+                <br>
+                <% if current_order.table_id.blank? %>
+                  <div class="info_button">
+                    <button type="submit" class="buy-now">
+                      <%= link_to t("dishes.show.buy"), tables_path %>
+                    </button>
+                  </div>
+                <% end %>
+              <% else %>
+                <label><%= t ".notavai" %></label>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
