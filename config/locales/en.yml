@@ -20,7 +20,7 @@ en:
   discount_input: "Input code"
   hello: "Hello world"
   res: Restaurant
-  brand: "Menu Online"
+  brand: "FCheckout"
   errors:
     update_customer: Update customer faild!
     create_customer: Create customer faild!
@@ -43,7 +43,7 @@ en:
     discount: "Discount: "
     book_online: "Book Online"
     reservations: "Reservations"
-    for_reservations: "for reservations &amp; enquiries"
+    for_reservations: "for reservations enquiries"
     tel: "010-020-0780"
     location: "Location"
     review_delicions: "123 Delicious Street,"
@@ -56,14 +56,13 @@ en:
       hope and confidence. If you can dream it, you can do it. Do it now, not tomorrow.
       Always continue the climb. It is possible for you to do."
   footer:
-    about: About the house
-    about_content: Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-      sed diam nonummy nibh euismod tincidunt ut laoreet.
-      Dolore magna aliquam erat volutpat ipsum.
-    contact: Contact Detail
-    contact_content1: 123 Delicious Street, San Francisco, CA 10110
-    contact_content2: 010-020-0780
-    contact_content3: hello@company.com
+    about: Giáo viên hướng dẫn
+    about_content: Thầy Hoàng Quang Huy.
+      Môn Phát triển phần mểm hưóng dịch vụ.
+    contact: Sinh viên thực hiện
+    contact_content1: nhóm 18, Đào Văn Hùng, KTPM3 - K9, HAUI
+    contact_content2: 0969479517
+    contact_content3: memsenpai3@gmail.com
     open: Opening Hours
     open_content1: Monday - Firday
     open_content2: 11:00 AM - 10:00 PM

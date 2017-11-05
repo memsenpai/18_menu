@@ -441,8 +441,8 @@ Dish.create! ([
    is_available: true
   },
   {name: "Mango Sorbet", price: 5,
-   image: "Tart, sweet, and very rich, this simple mango sorbet has a creamy texture verging on ice cream.",
-   description: "raw-mango-sorbet.jpg",
+   image: "raw-mango-sorbet.jpg",
+   description: "Tart, sweet, and very rich, this simple mango sorbet has a creamy texture verging on ice cream.",
    is_available: true
   },
   {name: "Pumpkin & Kale Salad", price: 6,

@@ -30,7 +30,6 @@ if (window.location.pathname == '/admin/orders') {
             .attr('class', 'label-blue');
           break;
         }
-
         if(respond.status == 'serving' || respond.status == 'uncheck') {
           $('.order_status_' + respond.id).find('span')
             .addClass('animated bounce');

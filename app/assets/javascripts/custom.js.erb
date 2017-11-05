@@ -5,11 +5,6 @@ $(document).on('turbolinks:load', function(){
 });
 
 $(document).on('turbolinks:load', function(){
-  var list_fonts = ['VT323', 'Indie Flower', 'CreepSter'];
-  setInterval(function(){
-    $('.home-title').css('font-family', list_fonts[Math.floor(Math.random() * list_fonts.length)]);
-  }, 5000);
-
   $(document).on('click','.close', function(){
     $('#myModal').css('display','none');
     $('.modal').css('display', 'none');
@@ -38,14 +33,10 @@ $(document).on('turbolinks:load', function(){
 
   $('.home-overlay').bgswitcher({
     images: [
-      "<%= asset_path 'WVDh6N2.jpg' %>",
-      "<%= asset_path 'gQGFY9C.jpg' %>",
-      "<%= asset_path 'ITUizuk.jpg' %>",
-      "<%= asset_path '4MzLYrL.jpg' %>",
-      "<%= asset_path 'g8AiwIu.jpg' %>",
-      "<%= asset_path 'oryEB6Z.jpg' %>",
-      "<%= asset_path 'YRk2lI7.jpg' %>",
-      "<%= asset_path '7uO7iFA.jpg' %>"],
+      "<%= asset_path 'miss-tess-2.jpg' %>",
+      "<%= asset_path 'Ecolodge-Lile-de-Ouarzazate-restaurant.jpg' %>",
+      "<%= asset_path 'dsc-7434.jpg' %>",
+      "<%= asset_path 'grain-bowl-salad-compressed.jpg' %>"],
     effect: 'fade',
     interval: 5000,
     loop: true,

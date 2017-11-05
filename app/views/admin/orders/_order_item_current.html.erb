@@ -37,41 +37,4 @@
     </tr>
     <%= render "admin/orders/modal_history_item", item: order_dish %>
   <% end %>
-  <% order.order_combos.each do |order_combo| %>
-    <tr class="order_item">
-      <td class="total combo-item-id" data-id="<%= order_combo.id %>">
-        <strong><%= order_combo.combo.name %></strong>
-      </td>
-      <td class="total item-type" data-type="2"><%= t "home.combo" %></td>
-      <td class="total item-price" data-price="<%= order_combo.combo.subtotal %>">
-        <%= number_to_currency order_combo.combo.subtotal %>
-      </td>
-      <td class="total item-quantity" data-quantity="<%= order_combo.quantity %>">
-        <%= order_combo.quantity %>
-      </td>
-      <td class="total item-discount" data-discount="<%= order_combo.combo.discount %>">
-        <%= order_combo.combo.discount %>%
-      </td>
-      <td class="total">
-        <%= number_to_currency order_combo.total_price %>
-      </td>
-      <td class="total">
-        <%= order_combo.status %>
-      </td>
-      <td class="total width-10 text-center">
-        <%= link_to admin_order_order_combo_path(order, order_combo,
-          order_combo: {quantity: order_combo.quantity,status: "cancel"}),
-          method: :delete, data: { confirm: t("button.delete_warning") } do %>
-          <i class="fa fa-lg fa-times"></i>
-        <% end %>
-      </td>
-      <td class="total width-10 text-center cancel-combo-order"
-        data-id="<%= order_combo.id.to_s + "_" + order_combo.order_id.to_s %>">
-        <% unless order_combo.cancel? %>
-          <i class="fa fa-lg fa-ban"></i>
-        <% end %>
-      </td>
-    </tr>
-    <%= render "admin/orders/modal_history_item", item: order_combo %>
-  <% end %>
 </tbody>

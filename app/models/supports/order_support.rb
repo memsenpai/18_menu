@@ -8,7 +8,7 @@ module Supports
     end
 
     def orders_search
-      search.result.page(param[:page]).per_page Settings.max_result
+      search.result.order(created_at: :desc).page(param[:page]).per_page Settings.max_result
     end
 
     def tables

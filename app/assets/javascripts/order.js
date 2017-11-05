@@ -136,6 +136,11 @@ $(document).on('click', '.dishes-item-add-to-cart', function() {
       order_dish: {
         quantity: 1,
         dish_id: dish_id
+      },
+      success: function(){
+        $('.flash-push.success').remove();
+        $('<div><div class="flash-push success">Success</div></div>')
+          .prependTo('.navbar.navbar-default.navbar-static-top.fadeInDownBig');
       }
     }
   }).success(function(){

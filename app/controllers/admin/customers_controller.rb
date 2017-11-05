@@ -35,7 +35,7 @@ module Admin
 
     def customer_params
       params.require(:customer).permit :name, :email,
-        :phone_num, :warning_times, :code, :money_paid
+        :phone_num, :code, :money_paid
     end
 
     def find_customer

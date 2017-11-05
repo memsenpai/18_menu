@@ -4,8 +4,7 @@
     <h1><%= t ".title" %></h1><br><br>
     <div class="bloc">
       <br>
-      <%= render "order_info", order: @order,
-        membership_coupons: @membership_coupons %>
+      <%= render "order_info", order: @order %>
       <br><br>
       <h3 class="title order-item">
         <%= t "order.order_items" %>

@@ -22,7 +22,6 @@ module SessionHelper
 
   def check_item_in_order?
     dish = Dish.find_by id: session[:dish_id]
-    # combo = Combo.find_by id: session[:combo_id]
     current_order.order_dishes.map(&:dish).include?(dish)
   end
 

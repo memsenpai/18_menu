@@ -13,10 +13,10 @@ class OrderDish < ApplicationRecord
 
   before_save :finalize
 
-  # after_update_commit{MessageBroadcastJob.perform_now describe}
-  # after_create_commit{save_history "create_new"}
-  # after_update_commit{save_history "updated"}
-  # after_destroy_commit{save_history "remove"}
+  after_update_commit{MessageBroadcastJob.perform_now describe}
+  after_create_commit{save_history "create_new"}
+  after_update_commit{save_history "updated"}
+  after_destroy_commit{save_history "remove"}
 
   load_order_dishes = lambda do |id|
     order_dishes = []

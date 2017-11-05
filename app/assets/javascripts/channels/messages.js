@@ -6,8 +6,7 @@ if( window.location.pathname == '/admin/chef') {
         notice = respond.dish;
       else
       notice += ' ' + respond.status;
-      location.reload();
-
+      location.reload();0
       $('.flash-push.success').remove();
       $('<div><div class="flash-push success">' + notice + '</div></div>')
         .prependTo('.navbar.navbar-default.navbar-static-top.fadeInDownBig');
