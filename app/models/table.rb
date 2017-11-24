@@ -4,9 +4,11 @@ class Table < ApplicationRecord
   find_table = lambda do |capacity, day, hour_end, hour_start|
     where(
       "capacity >= ? AND id NOT IN (?)", capacity, Order.where(
-        "day = ? AND time(time_in) < time(?)
-        AND time(time_in) > time(?) AND
-        (status NOT IN ('approved', 'done', 'serving'))",
+        "day = ?
+        AND (status < 2)
+        AND to_timestamp(time_in, 'HH24:MI')::time < to_timestamp(?, 'HH24:MI')::time
+        AND to_timestamp(time_in, 'HH24:MI')::time > to_timestamp(?, 'HH24:MI')::time
+        ",
         day, hour_end, hour_start
       ).select("table_id")
     )

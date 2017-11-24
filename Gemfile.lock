@@ -449,7 +449,7 @@ DEPENDENCIES
   rails_12factor (= 0.0.2)
   rails_best_practices
   ransack (= 1.8.2)
-  redis
+  redis (~> 3.0)
   reek
   rspec-activemodel-mocks
   rspec-collection_matchers
@@ -473,4 +473,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.15.4
+   1.16.0
