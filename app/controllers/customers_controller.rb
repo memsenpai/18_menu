@@ -12,12 +12,19 @@ class CustomersController < ApplicationController
 
   def create
     customer = Customer.new customer_params
+    code = nil
+    message = nil
     if customer.save
       session[:customer] = customer
-      flash[:success] = t "customer.success_create"
+      code = 200
+      message = t "customer.success_create"
     else
-      flash[:danger] = t "customer.fail_create"
-      redirect_to root_path
+      code = 404
+      message = t "customer.fail_create"
+    end
+    respond_to do |format|
+      format.html
+      format.json {render json: {code: code,message: message}}
     end
   end
 

@@ -1,4 +1,22 @@
 /*global WOW:true*/
+
+var area = function(element){
+  this.element = element;
+  this.open_loading = function(){
+    this.element.append('<div class="loading-area-background"></div>' +
+      '<div class="cssload-whirlpool"></div>');
+  }
+
+  this.replace_open_loading = function(){
+    this.element.html('<div class="loading-area-background"></div>' +
+      '<div class="cssload-whirlpool"></div>');
+  }
+
+  this.close_loading = function(){
+    this.element.find('.loading-area-background, .cssload-whirlpool').remove();
+  }
+}
+
 $(document).on('turbolinks:load', function(){
   if(window.location.pathname == '/tables')
     tables_book();
@@ -60,8 +78,12 @@ function book_table (){
       day: val_date,
       time_in: val_time,
       table_id: id_table
+    },
+    beforeSend: function () {
+      new area($('.table-section')).open_loading();
     }
   }).success(function(d){
+    new area($('.table-section')).close_loading();
     location.replace(d.path);
   });
 }
@@ -212,8 +234,12 @@ function tables_book(){
             orders_time_in_eq: val_time,
             id: val_id
           }
+        },
+        beforeSend: function(){
+          new area($('.box')).open_loading();
         }
       }).done(function(data) {
+        new area($('.box')).close_loading();
         for(var i=0;i<19;i++) {
           $('.btn-'+ i).removeClass('btn-maru').removeClass('btn-choose').addClass('btn-batsu');
         }
@@ -248,8 +274,12 @@ function tables_book(){
           customer: {
             code: customer_code,
           }
+        },
+        beforeSend: function(){
+          new area($('.panel-group')).open_loading();
         }
       }).success(function(result){
+        new area($('.panel-group')).close_loading();
         if (result.status == 0) {
           alert(I18n.t('errors.customer_code_not_exists'));
         } else if (result.status == -1) {
@@ -273,9 +303,22 @@ function tables_book(){
             email: val_email,
             phone_num: val_phone,
           }
+        },
+        beforeSend: function () {
+          new area($('.panel-group')).open_loading();
         }
-      }).success(function(){
-        book_table();
+      }).success(function(data){
+        new area($('.panel-group')).close_loading();
+        $('.flash-push').remove();
+        $('<div><div class="flash-push">' + data["message"] + '</div></div>')
+          .prependTo('.navbar.navbar-default.navbar-static-top.fadeInDownBig');
+        if(data["code"] == 200){
+          book_table();
+        } else {
+          if(data["code"] == 404){
+            window.reload();
+          }
+        }
       });
     }
   });

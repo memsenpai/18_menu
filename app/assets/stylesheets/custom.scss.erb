@@ -3126,7 +3126,7 @@ a:visited {
 }
 
 .flash-push {
-  animation: fadeInOut 5s ease 1s forwards;
+  animation: fadeInOut 5s ease 0s forwards;
   background: $white;
   border-radius: 5px;
   bottom: 8%;
@@ -4446,4 +4446,79 @@ $mute: #dfe3e4;
 
 .display-flex {
   display: flex;
+}
+
+.cssload-whirlpool,
+.cssload-whirlpool::before,
+.cssload-whirlpool::after {
+  border: 1px solid $black;
+  border-left-color: $white;
+  border-radius: 974px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+.cssload-whirlpool {
+  animation: cssload-rotate 2000ms linear infinite;
+  height: 49px;
+  margin: -24px 0 0 -24px;
+  width: 49px;
+}
+
+.cssload-whirlpool::before {
+  animation: cssload-rotate 2000ms linear infinite;
+  content: '';
+  height: 43px;
+  margin: -22px 0 0 -22px;
+  width: 43px;
+}
+
+.cssload-whirlpool::after {
+  animation: cssload-rotate 4000ms linear infinite;
+  content: '';
+  height: 55px;
+  margin: -28px 0 0 -28px;
+  width: 55px;
+}
+
+@keyframes cssload-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes cssload-rotate {
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes cssload-rotate {
+  100% {
+    -ms-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes cssload-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes cssload-rotate {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+.loading-area-background {
+  background: $black;
+  height: 100%;
+  left: 0;
+  opacity: .4;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }

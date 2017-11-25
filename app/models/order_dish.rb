@@ -48,11 +48,11 @@ class OrderDish < ApplicationRecord
   scope :created_at_between, created_at_between
 
   def find_discount
-    DiscountDish.new(self).discount
+    # DiscountDish.new(self).discount
   end
 
   def total_price
-    price * quantity * (100 - find_discount) / 100
+    price * quantity
   end
 
   private
