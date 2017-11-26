@@ -13648,3 +13648,2228 @@ Processing by Admin::OrdersController#show as HTML
 Completed 200 OK in 356ms (Views: 344.2ms | ActiveRecord: 3.6ms)
 
 
+Started GET "/login" for 127.0.0.1 at 2017-11-26 21:31:19 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (32.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (26.4ms)
+  Rendered layouts/_cart_text.html.erb (0.9ms)
+  Rendered layouts/_menu_customer.html.erb (3.0ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 11072ms (Views: 10986.0ms | ActiveRecord: 64.8ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-11-26 21:32:20 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XsIMLPERBi6+IpwuL69TMSBcLlC+OqAEXDW+17xYWirHXlEwfWZcrU0QEQUyBc+IszbM9/fBv28eJ0d4LGRWVA==", "staff"=>{"email"=>"admin@123.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Login"}
+  [1m[36mStaff Load (52.9ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["email", "admin@123.com"], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "admin@123.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 198ms (ActiveRecord: 53.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-26 21:32:20 +0700
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/_slogan.html.erb (8.0ms)
+  Rendered pages/_book_table_online.html.erb (1.6ms)
+  Rendered pages/home.html.erb within layouts/application (13.0ms)
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered layouts/_menu_staff.html.erb (93.9ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+Completed 200 OK in 413ms (Views: 390.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/orders" for 127.0.0.1 at 2017-11-26 21:32:24 +0700
+Processing by Admin::OrdersController#index as HTML
+  Parameters: {"authenticity_token"=>"CEsHvg8gFxoRfyXhTo2pnoWGkdgeIsOWwmBcBv4doHLL5P+1fEOKosnwrYp9KY16C7dsMgyJkPqikzQzgpos2g=="}
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/orders/index.html.erb within layouts/application
+  [1m[36mTable Load (17.9ms)[0m  [1m[34mSELECT "tables".* FROM "tables"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  [1m[36mCustomer Load (11.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.3ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (1.3ms)
+  Rendered admin/orders/_order_index.html.erb (49.8ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (4.9ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (4.4ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (4.6ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (5.1ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.3ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.0ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.8ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.0ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.8ms)
+  Rendered admin/orders/_order_content.html.erb (121.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  Rendered admin/orders/_order.html.erb (190.8ms)
+  Rendered admin/orders/index.html.erb within layouts/application (197.5ms)
+  Rendered layouts/_menu_staff.html.erb (1.4ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 515ms (Views: 434.7ms | ActiveRecord: 40.0ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 21:32:24 +0700
+Started GET "/0c00bf7579cd612681ca19684d4d8a68.jpg" for 127.0.0.1 at 2017-11-26 21:32:24 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/0c00bf7579cd612681ca19684d4d8a68.jpg"):
+  
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 21:32:24 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [153 times] (272.5ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (728.2ms)
+OrdersChannel is transmitting the subscription confirmation
+OrdersChannel is streaming from orders
+Started GET "/admin/orders?page=2" for 127.0.0.1 at 2017-11-26 21:32:43 +0700
+Processing by Admin::OrdersController#index as JS
+  Parameters: {"page"=>"2"}
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/orders/index.js.erb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 15]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.8ms)
+  Rendered admin/orders/_order_index.html.erb (6.7ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (5.4ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.1ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.2ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (4.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.3ms)
+  Rendered admin/orders/_order_content.html.erb (54.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  Rendered admin/orders/index.js.erb (102.5ms)
+Completed 200 OK in 130ms (Views: 106.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/admin/orders" for 127.0.0.1 at 2017-11-26 21:32:46 +0700
+Processing by Admin::OrdersController#index as JS
+  [1m[36mStaff Load (1.7ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/orders/index.js.erb
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.3ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (1.3ms)
+  Rendered admin/orders/_order_index.html.erb (11.1ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTable Load (0.3ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (7.0ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (6.3ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTable Load (0.3ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (6.7ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.3ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.4ms)
+  Rendered admin/orders/_order_index.html.erb (6.3ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (6.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (5.7ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.7ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (6.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.3ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (5.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.4ms)
+  Rendered admin/orders/_order_index.html.erb (5.4ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.7ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.5ms)
+  Rendered admin/orders/_order_index.html.erb (6.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.6ms)
+  Rendered admin/orders/_order_content.html.erb (152.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  Rendered admin/orders/index.js.erb (189.7ms)
+Completed 200 OK in 222ms (Views: 191.7ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/admin/orders?type=Uncheck" for 127.0.0.1 at 2017-11-26 21:32:51 +0700
+Processing by Admin::OrdersController#index as JS
+  Parameters: {"type"=>"Uncheck"}
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/orders/index.js.erb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."status" = $1[0m  [["status", 0]]
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."status" = $1 ORDER BY "orders"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 0], ["LIMIT", 15], ["OFFSET", 0]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (1.1ms)
+  Rendered admin/orders/_order_index.html.erb (9.1ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (6.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (6.0ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (6.0ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (6.1ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (6.1ms)
+  Rendered admin/orders/_order_content.html.erb (67.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."status" = $1[0m  [["status", 0]]
+  Rendered admin/orders/index.js.erb (78.9ms)
+Completed 200 OK in 98ms (Views: 83.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/admin/orders?type=Approved" for 127.0.0.1 at 2017-11-26 21:32:52 +0700
+Processing by Admin::OrdersController#index as JS
+  Parameters: {"type"=>"Approved"}
+  [1m[36mStaff Load (0.8ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/orders/index.js.erb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."status" = $1[0m  [["status", 2]]
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."status" = $1 ORDER BY "orders"."created_at" DESC LIMIT $2 OFFSET $3[0m  [["status", 2], ["LIMIT", 15], ["OFFSET", 0]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (1.1ms)
+  Rendered admin/orders/_order_index.html.erb (8.2ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.9ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (7.0ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (5.4ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (6.0ms)
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.5ms)
+  Rendered admin/orders/_order_content.html.erb (79.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."status" = $1[0m  [["status", 2]]
+  Rendered admin/orders/index.js.erb (91.7ms)
+Completed 200 OK in 122ms (Views: 101.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/admin/orders" for 127.0.0.1 at 2017-11-26 21:32:54 +0700
+Processing by Admin::OrdersController#index as JS
+  [1m[36mStaff Load (1.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/orders/index.js.erb
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.9ms)
+  Rendered admin/orders/_order_index.html.erb (8.2ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.7ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (6.5ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.5ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.1ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.4ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (4.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (4.7ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.0ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (4.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (5.1ms)
+  Rendered admin/orders/_order_content.html.erb (187.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  Rendered admin/orders/index.js.erb (221.6ms)
+Completed 200 OK in 250ms (Views: 228.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/admin/orders" for 127.0.0.1 at 2017-11-26 21:32:59 +0700
+Processing by Admin::OrdersController#index as JS
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/orders/index.js.erb
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.6ms)
+  Rendered admin/orders/_order_index.html.erb (6.4ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTable Load (0.4ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (7.3ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.1ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (7.4ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.4ms)
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (7.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (5.5ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (6.4ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (5.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (6.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.2ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.6ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (4.9ms)
+  Rendered admin/orders/_order_content.html.erb (137.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  Rendered admin/orders/index.js.erb (173.2ms)
+Completed 200 OK in 191ms (Views: 176.5ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/admin/orders" for 127.0.0.1 at 2017-11-26 21:36:47 +0700
+Processing by Admin::OrdersController#index as HTML
+  [1m[36mStaff Load (2.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/orders/index.html.erb within layouts/application
+  [1m[36mTable Load (0.5ms)[0m  [1m[34mSELECT "tables".* FROM "tables"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.7ms)
+  Rendered admin/orders/_order_index.html.erb (4.7ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (5.1ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (4.2ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.2ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.6ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.1ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (3.7ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (4.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.2ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.2ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.6ms)
+  Rendered admin/orders/_order_content.html.erb (68.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  Rendered admin/orders/_order.html.erb (91.8ms)
+  Rendered admin/orders/index.html.erb within layouts/application (94.0ms)
+  Rendered layouts/_menu_staff.html.erb (1.5ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 401ms (Views: 384.0ms | ActiveRecord: 7.1ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 21:36:48 +0700
+OrdersChannel stopped streaming from orders
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 21:36:48 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 21:36:48 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Started GET "/0c00bf7579cd612681ca19684d4d8a68.jpg" for 127.0.0.1 at 2017-11-26 21:36:48 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/0c00bf7579cd612681ca19684d4d8a68.jpg"):
+  
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+OrdersChannel is transmitting the subscription confirmation
+OrdersChannel is streaming from orders
+  Rendered collection of /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [153 times] (294.9ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (741.3ms)
+Started GET "/admin/orders" for 127.0.0.1 at 2017-11-26 21:37:59 +0700
+Processing by Admin::OrdersController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/orders/index.html.erb within layouts/application
+  [1m[36mTable Load (0.3ms)[0m  [1m[34mSELECT "tables".* FROM "tables"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.7ms)
+  Rendered admin/orders/_order_index.html.erb (79.4ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.0ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.1ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (3.1ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.1ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.6ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.3ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.5ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.6ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.5ms)
+  Rendered admin/orders/_order_content.html.erb (134.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  Rendered admin/orders/_order.html.erb (153.3ms)
+  Rendered admin/orders/index.html.erb within layouts/application (154.4ms)
+  Rendered layouts/_menu_staff.html.erb (1.4ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 436ms (Views: 427.3ms | ActiveRecord: 4.9ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 21:37:59 +0700
+OrdersChannel stopped streaming from orders
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 21:38:00 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 21:38:00 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Started GET "/0c00bf7579cd612681ca19684d4d8a68.jpg" for 127.0.0.1 at 2017-11-26 21:38:00 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/0c00bf7579cd612681ca19684d4d8a68.jpg"):
+  
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+OrdersChannel is transmitting the subscription confirmation
+OrdersChannel is streaming from orders
+  Rendered collection of /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [153 times] (173.7ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (614.4ms)
+Started GET "/admin/orders" for 127.0.0.1 at 2017-11-26 21:38:24 +0700
+Processing by Admin::OrdersController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/orders/index.html.erb within layouts/application
+  [1m[36mTable Load (0.3ms)[0m  [1m[34mSELECT "tables".* FROM "tables"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.6ms)
+  Rendered admin/orders/_order_index.html.erb (4.7ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.3ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.3ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.7ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.4ms)
+  Rendered admin/orders/_order_index.html.erb (4.0ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.5ms)
+  Rendered admin/orders/_order_index.html.erb (3.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.6ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (4.4ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (4.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.8ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.5ms)
+  Rendered admin/orders/_order_index.html.erb (3.7ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (7.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.5ms)
+  Rendered admin/orders/_order_index.html.erb (3.8ms)
+  Rendered admin/orders/_order_content.html.erb (73.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  Rendered admin/orders/_order.html.erb (91.7ms)
+  Rendered admin/orders/index.html.erb within layouts/application (92.6ms)
+  Rendered layouts/_menu_staff.html.erb (1.9ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 445ms (Views: 436.9ms | ActiveRecord: 4.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 21:38:25 +0700
+OrdersChannel stopped streaming from orders
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 21:38:25 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 21:38:25 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Started GET "/0c00bf7579cd612681ca19684d4d8a68.jpg" for 127.0.0.1 at 2017-11-26 21:38:25 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/0c00bf7579cd612681ca19684d4d8a68.jpg"):
+  
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+OrdersChannel is transmitting the subscription confirmation
+OrdersChannel is streaming from orders
+  Rendered collection of /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [153 times] (186.5ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (1586.8ms)
+Started GET "/admin/orders" for 127.0.0.1 at 2017-11-26 21:38:33 +0700
+Processing by Admin::OrdersController#index as HTML
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/orders/index.html.erb within layouts/application
+  [1m[36mTable Load (0.4ms)[0m  [1m[34mSELECT "tables".* FROM "tables"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.8ms)
+  Rendered admin/orders/_order_index.html.erb (5.4ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (3.8ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (4.0ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.3ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (4.4ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (4.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.7ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.1ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.3ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.9ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.4ms)
+  Rendered admin/orders/_order_index.html.erb (3.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.3ms)
+  Rendered admin/orders/_order_content.html.erb (75.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  Rendered admin/orders/_order.html.erb (92.3ms)
+  Rendered admin/orders/index.html.erb within layouts/application (93.6ms)
+  Rendered layouts/_menu_staff.html.erb (1.4ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 369ms (Views: 359.9ms | ActiveRecord: 5.1ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 21:38:34 +0700
+OrdersChannel stopped streaming from orders
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 21:38:34 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 21:38:34 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Started GET "/0c00bf7579cd612681ca19684d4d8a68.jpg" for 127.0.0.1 at 2017-11-26 21:38:34 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/0c00bf7579cd612681ca19684d4d8a68.jpg"):
+  
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+OrdersChannel is transmitting the subscription confirmation
+OrdersChannel is streaming from orders
+  Rendered collection of /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [153 times] (196.4ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (674.1ms)
+Started GET "/admin/categories" for 127.0.0.1 at 2017-11-26 21:40:06 +0700
+Processing by Admin::CategoriesController#index as HTML
+  Parameters: {"authenticity_token"=>"Vs1MMxUAH0dWtI/cx16uFgVEfamwKfN4sPt6fqa9ODGVYrQ4ZmOC/447B7f0+oryi3WAQ6KCoBTQCBJL2jq0mQ=="}
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/categories/index.html.erb within layouts/application
+  [1m[35m (22.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" ORDER BY "categories"."created_at" ASC, "categories"."name" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered admin/categories/_category.html.erb (47.7ms)
+  Rendered admin/categories/index.html.erb within layouts/application (57.6ms)
+  Rendered layouts/_menu_staff.html.erb (1.5ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 1413ms (Views: 1377.5ms | ActiveRecord: 26.0ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 21:40:08 +0700
+OrdersChannel stopped streaming from orders
+Started GET "/admin/dishes" for 127.0.0.1 at 2017-11-26 21:40:10 +0700
+Processing by Admin::DishesController#index as HTML
+  Parameters: {"authenticity_token"=>"jyRN/spi521zl2yC2wAZGW0D4jVyjSVtZy+VitN9QhpMi7X1uQF61asY5OnopD394zIf32AmdgEH3P2/r/rOsg=="}
+  [1m[36mStaff Load (1.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/dishes/index.html.erb within layouts/application
+  [1m[35m (47.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "dishes"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "dishes"[0m
+  [1m[36mDish Load (7.7ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" ORDER BY "dishes"."id" ASC, "dishes"."name" ASC, "dishes"."price" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  Rendered admin/dishes/_dish.html.erb (129.5ms)
+  Rendered admin/dishes/index.html.erb within layouts/application (131.8ms)
+  Rendered layouts/_menu_staff.html.erb (1.4ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 2251ms (Views: 2184.0ms | ActiveRecord: 59.7ms)
+
+
+Started GET "/staffs/edit" for 127.0.0.1 at 2017-11-26 21:40:16 +0700
+Processing by StaffsController#edit as HTML
+  Parameters: {"authenticity_token"=>"G1g3S17AietI8TtZygJdZ5r0RB9pHrb/RZ5xQsUsjEHY989ALaMUU5B+szL5pnmDFMW59Xu15ZMlbRl3uasA6Q=="}
+  [1m[36mStaff Load (0.8ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_menu_staff.html.erb (2.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 276ms (Views: 269.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/staffs/edit" for 127.0.0.1 at 2017-11-26 21:41:20 +0700
+Processing by StaffsController#edit as HTML
+  [1m[36mStaff Load (0.8ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_menu_staff.html.erb (1.6ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 291ms (Views: 283.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2017-11-26 21:41:24 +0700
+Processing by StaffsController#show as HTML
+  Parameters: {"authenticity_token"=>"mB7hhk5PlchUIltDuGCRVHBalntZ8t2uJhgar6jB67NbsRmNPSwIcIyt0yiLxLWw/mtrkUtZjsJG63Ka1EZnGw=="}
+  [1m[36mStaff Load (1.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  Rendered staffs/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_menu_staff.html.erb (3.0ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 285ms (Views: 274.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/staffs/edit" for 127.0.0.1 at 2017-11-26 21:41:33 +0700
+Processing by StaffsController#edit as HTML
+  Parameters: {"authenticity_token"=>"dVxedIKA6/knkTdTO5hnNN4C17mdiPjv3VHxdvmcTSS286Z/8eN2Qf8evzgIPEPQUDMqU48jq4O9oplDhRvBjA=="}
+  [1m[36mStaff Load (1.1ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_menu_staff.html.erb (2.4ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 280ms (Views: 275.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/staffs/edit" for 127.0.0.1 at 2017-11-26 21:41:45 +0700
+Processing by StaffsController#edit as HTML
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_menu_staff.html.erb (1.7ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 291ms (Views: 285.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/staffs/edit" for 127.0.0.1 at 2017-11-26 21:41:54 +0700
+Processing by StaffsController#edit as HTML
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_menu_staff.html.erb (1.7ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 278ms (Views: 275.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs/edit" for 127.0.0.1 at 2017-11-26 21:42:33 +0700
+Processing by StaffsController#edit as HTML
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_menu_staff.html.erb (1.7ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 280ms (Views: 276.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs" for 127.0.0.1 at 2017-11-26 21:42:54 +0700
+Processing by StaffsController#show as HTML
+  Parameters: {"authenticity_token"=>"n4ais6Oht4jco/qN7zcPgUd614pZ8va7vbJs8dgt0p9cKVq40MIqMAQscubckytlyUsqYEtZpdfdQQTEpKpeNw=="}
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  Rendered staffs/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_menu_staff.html.erb (1.6ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 286ms (Views: 282.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/staffs/new" for 127.0.0.1 at 2017-11-26 21:43:01 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/staffs/new"):
+  
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered collection of /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [153 times] (42.0ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (69.6ms)
+Started GET "/staffs" for 127.0.0.1 at 2017-11-26 21:43:36 +0700
+Processing by StaffsController#show as HTML
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering staffs/show.html.erb within layouts/application
+  Rendered staffs/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_menu_staff.html.erb (1.8ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 306ms (Views: 297.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/staffs/edit" for 127.0.0.1 at 2017-11-26 21:43:40 +0700
+Processing by StaffsController#edit as HTML
+  Parameters: {"authenticity_token"=>"G4AfYAY9qSu27UR9htledfsbMvJsEKWh9ThAaj9KpB/YL+drdV40k25izBa1fXqRdSrPGH679s2VyyhfQ80otw=="}
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  [1m[36mDish Load (0.6ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendered staffs/edit.html.erb within layouts/application (51.0ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <%= content_for :title, "Profile #{current_user.name}" %>
+    2: <section id="login" class="parallax-section section-box">
+    3:   <div class="login-form">
+    4:     <h1 class="stylish-heading"><%= t "admin.edit" %></h1>
+  
+app/views/staffs/edit.html.erb:1:in `_app_views_staffs_edit_html_erb__236293911730143728_70266813605440'
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.4ms)
+Started GET "/staffs/edit" for 127.0.0.1 at 2017-11-26 21:44:07 +0700
+Processing by StaffsController#edit as HTML
+  Parameters: {"authenticity_token"=>"G4AfYAY9qSu27UR9htledfsbMvJsEKWh9ThAaj9KpB/YL+drdV40k25izBa1fXqRdSrPGH679s2VyyhfQ80otw=="}
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_menu_staff.html.erb (1.8ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 291ms (Views: 288.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/staffs/edit" for 127.0.0.1 at 2017-11-26 21:46:40 +0700
+Processing by StaffsController#edit as HTML
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_menu_staff.html.erb (1.7ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 288ms (Views: 285.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admin/staffs" for 127.0.0.1 at 2017-11-26 21:46:42 +0700
+Processing by Admin::StaffsController#index as HTML
+  Parameters: {"authenticity_token"=>"36c9bmjHbTLr4y+UesU68biOeSF0IKWHXv5CcjmsUDwcCMVlG6TwijNsp/9JYR4VNr+Ey2aL9us+DSpHRSvclA=="}
+  [1m[36mStaff Load (0.7ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/staffs/index.html.erb within layouts/application
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  Rendered admin/staffs/index.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_menu_staff.html.erb (1.6ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 319ms (Views: 310.3ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-11-26 21:59:43 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/MIhdiPqWL6jOeUcIy6XHlojY/I7TlMq6PgimsFhCfU/bdl9UInFBnu2bXcQirP61BKeGCnlAEaIC0qvveaFXQ=="}
+  [1m[36mStaff Load (1.7ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-26 21:59:43 +0700
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/_slogan.html.erb (5.7ms)
+  Rendered pages/_book_table_online.html.erb (1.3ms)
+  Rendered pages/home.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_cart_text.html.erb (0.4ms)
+  Rendered layouts/_menu_customer.html.erb (1.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 286ms (Views: 284.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dishes" for 127.0.0.1 at 2017-11-26 21:59:46 +0700
+Processing by DishesController#index as HTML
+  Parameters: {"authenticity_token"=>"3tASDm6SAiNYK9v591zZsmOZWb4AXmHpg7yIFY3pnzTT7mmjI2lDzBmItyFxcDwgk5fVk4k9QGgQUihWMXOd5A=="}
+  Rendering dishes/index.html.erb within layouts/application
+  [1m[36mOrderDish Load (34.0ms)[0m  [1m[34mSELECT  dish_id, sum(quantity) as total_quantity FROM "order_dishes" GROUP BY "order_dishes"."dish_id" ORDER BY total_quantity DESC LIMIT $1[0m  [["LIMIT", 6]]
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 118], ["LIMIT", 1]]
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 78], ["LIMIT", 1]]
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 67], ["LIMIT", 1]]
+  [1m[36mDish Load (0.4ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 136], ["LIMIT", 1]]
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" WHERE "dishes"."id" = $1 LIMIT $2[0m  [["id", 137], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "dishes"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "dishes"[0m
+  [1m[36mDish Load (0.5ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" ORDER BY "dishes"."name" ASC, "dishes"."price" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "dishes"[0m
+  [1m[36mDish Load (0.3ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" ORDER BY "dishes"."name" ASC, "dishes"."price" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "dishes".* FROM "dishes" ORDER BY "dishes"."name" ASC, "dishes"."price" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  Rendered dishes/_dish.html.erb (29.7ms)
+  Rendered dishes/index.html.erb within layouts/application (91.1ms)
+  Rendered layouts/_cart_text.html.erb (0.3ms)
+  Rendered layouts/_menu_customer.html.erb (2.0ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 393ms (Views: 351.2ms | ActiveRecord: 39.4ms)
+
+
+Started GET "/tables" for 127.0.0.1 at 2017-11-26 21:59:48 +0700
+Processing by TablesController#index as HTML
+  Parameters: {"authenticity_token"=>"PINLfBLzQsFH2Ub2mMXvRy7uy76W5oOzSH+8pSHOncExvTDRXwgDLgZ6Ki4e6QrV3uBHkx+FojLbkRzmnVSfEQ=="}
+  Rendering tables/index.html.erb within layouts/application
+  Rendered tables/_reservation.html.erb (3.8ms)
+  Rendered tables/_map.html.erb (1.4ms)
+  Rendered tables/_customer_code.html.erb (1.4ms)
+  Rendered tables/_new_customer_form.html.erb (1.9ms)
+  Rendered tables/_confirm.html.erb (4.7ms)
+  Rendered tables/index.html.erb within layouts/application (13.0ms)
+  Rendered layouts/_cart_text.html.erb (0.4ms)
+  Rendered layouts/_menu_customer.html.erb (1.9ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 294ms (Views: 290.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/orders" for 127.0.0.1 at 2017-11-26 21:59:51 +0700
+Processing by OrdersController#index as HTML
+  Parameters: {"authenticity_token"=>"QoqnarINPfZMQj/0U9stQCPVKhA8lG6RXJmwBkxv6MBPtNzH//Z8GQ3hUyzV98jS09umPbX3TxDPdxBF8PXqEA=="}
+  Rendering orders/index.html.erb within layouts/application
+  Rendered orders/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_cart_text.html.erb (0.4ms)
+  Rendered layouts/_menu_customer.html.erb (5.0ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 296ms (Views: 293.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-26 21:59:53 +0700
+Processing by PagesController#show as HTML
+  Parameters: {"authenticity_token"=>"EHXG/ziZb6S6zurVq2DvUgvoQr2SvRylxEW2B5T9+TsdS71SdWIuS/tthg0tTArA++bOkBvePSRXqxZEKGf76w==", "page"=>"home"}
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/_slogan.html.erb (7.4ms)
+  Rendered pages/_book_table_online.html.erb (1.7ms)
+  Rendered pages/home.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_cart_text.html.erb (0.4ms)
+  Rendered layouts/_menu_customer.html.erb (2.0ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 303ms (Views: 301.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-26 22:00:25 +0700
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/_slogan.html.erb (10.8ms)
+  Rendered pages/_book_table_online.html.erb (2.0ms)
+  Rendered pages/home.html.erb within layouts/application (15.9ms)
+  Rendered layouts/_cart_text.html.erb (0.4ms)
+  Rendered layouts/_menu_customer.html.erb (2.1ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 319ms (Views: 316.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cart" for 127.0.0.1 at 2017-11-26 22:00:28 +0700
+Processing by OrdersController#show as HTML
+  Parameters: {"authenticity_token"=>"mUbdSKUjCayBvsOFMZAcdbbkPGyfcTikvLVovzM+UVyUeKbl6NhIQ8Adr123vPnnRuqwQRYSGSUvW8j8j6RTjA=="}
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/_ordering_cart.html.erb (0.6ms)
+  Rendered orders/show.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_cart_text.html.erb (0.5ms)
+  Rendered layouts/_menu_customer.html.erb (1.8ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 303ms (Views: 300.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cart" for 127.0.0.1 at 2017-11-26 22:00:47 +0700
+Processing by OrdersController#show as HTML
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/show.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+<section class="section go-to-book">
+                       ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:2: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+ion class="section go-to-book">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+  <div class="bloc col-sm-12 col-md-10 col-md-of
+                  ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+<div class="bloc col-sm-12 col-md-10 col-md-offset-1">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+="bloc col-sm-12 col-md-10 col-md-offset-1">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:3: syntax error, unexpected tSTRING_BEG, expecting ')'
+-12 col-md-10 col-md-offset-1">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:4: syntax error, unexpected tIDENTIFIER, expecting ')'
+    <div class="tracking-order-process">
+                        ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:4: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+class="tracking-order-process">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+ppend='        <p class="order-id order-code">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+      <p class="order-id order-code">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+<p class="order-id order-code">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+utput_buffer.append=( t "order.order_code" );@output_buffer.
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+append='      <p class="status">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+utput_buffer.append=( t "order.order_status" );@output_buffe
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+utput_buffer.append=( t "order.approver" );@output_buffer.sa
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+utput_buffer.append=( t "order.your_order_has_approved" );@o
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:23: syntax error, unexpected tIDENTIFIER, expecting ')'
+tput_buffer.append=( t "status.#{current_order.status}" );@o
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:25: syntax error, unexpected '<'
+            <p>
+             ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:27: syntax error, unexpected '<', expecting ')'
+            </p>
+             ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:32: unknown regexp options - pa
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:33: syntax error, unexpected '<'
+          <p>
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:35: syntax error, unexpected '<', expecting ')'
+          </p>
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:37: unknown regexp option - p
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:38: syntax error, unexpected '<'
+        <br>
+         ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:40: syntax error, unexpected '<'
+          <div class="col-lg-3 col-sm-4 b
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:41: syntax error, unexpected '<'
+            <div class="text-center bs-wiza
+             ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:42: syntax error, unexpected '<'
+              <p>
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:44: syntax error, unexpected '<', expecting ')'
+              </p>
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:45: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:46: syntax error, unexpected '<'
+            <div class="progress">
+             ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:47: syntax error, unexpected '<'
+              <div class="progress-bar"></div
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:47: syntax error, unexpected '<'
+   <div class="progress-bar"></div>
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:48: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:49: syntax error, unexpected '<'
+            <span class="bs-wizard-dot"></s
+             ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:49: syntax error, unexpected '<'
+ <span class="bs-wizard-dot"></span>
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:50: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:51: syntax error, unexpected '<'
+          <div class="col-lg-3 col-sm-4 b
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:52: syntax error, unexpected '<'
+            <div class="text-center bs-wiza
+             ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:53: syntax error, unexpected '<'
+              <p>
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:55: syntax error, unexpected '<', expecting ')'
+              </p>
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:56: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:58: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+pend='              <div class="progress">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:59: syntax error, unexpected '<'
+                <div class="progress-bar"></div
+                 ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:59: syntax error, unexpected '<'
+   <div class="progress-bar"></div>
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:60: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:61: syntax error, unexpected '<'
+              <span class="bs-wizard-dot"></s
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:61: syntax error, unexpected '<'
+ <span class="bs-wizard-dot"></span>
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:64: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:65: syntax error, unexpected '<'
+              </div>
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:67: syntax error, unexpected '<'
+imes" aria-hidden="true"></i></span>
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:69: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:70: syntax error, unexpected '<'
+          <div class="col-lg-3 col-sm-4 b
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:71: syntax error, unexpected '<'
+            <div class="text-center bs-wiza
+             ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:72: syntax error, unexpected '<'
+              <p>
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:74: syntax error, unexpected '<', expecting ')'
+              </p>
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:75: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:77: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+pend='              <div class="progress">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:78: syntax error, unexpected '<'
+                <div class="progress-bar"></div
+                 ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:78: syntax error, unexpected '<'
+   <div class="progress-bar"></div>
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:79: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:80: syntax error, unexpected '<'
+              <span class="bs-wizard-dot"></s
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:80: syntax error, unexpected '<'
+ <span class="bs-wizard-dot"></span>
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:83: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:84: syntax error, unexpected '<'
+              </div>
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:86: syntax error, unexpected '<'
+imes" aria-hidden="true"></i></span>
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:88: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:89: syntax error, unexpected '<'
+          <div class="col-lg-3 col-sm-4 b
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:90: syntax error, unexpected '<'
+            <div class="text-center bs-wiza
+             ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:91: syntax error, unexpected '<'
+              <p>
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:93: syntax error, unexpected '<', expecting ')'
+              </p>
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:94: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:96: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+pend='              <div class="progress">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:97: syntax error, unexpected '<'
+                <div class="progress-bar"></div
+                 ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:97: syntax error, unexpected '<'
+   <div class="progress-bar"></div>
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:98: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:99: syntax error, unexpected '<'
+              <span class="bs-wizard-dot"></s
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:99: syntax error, unexpected '<'
+ <span class="bs-wizard-dot"></span>
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:102: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:103: syntax error, unexpected '<'
+              </div>
+               ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:105: syntax error, unexpected '<'
+imes" aria-hidden="true"></i></span>
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:107: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:108: syntax error, unexpected '<'
+        </div>
+         ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:109: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:110: syntax error, unexpected '<'
+    <br>
+     ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:113: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+afe_append='        <div class="text-center user-info">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:114: syntax error, unexpected '<'
+          <p class="description">
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:116: syntax error, unexpected '<', expecting ')'
+          </p>
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:119: unknown regexp options - pa
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:120: syntax error, unexpected '<'
+          </p>
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:123: unknown regexp options - pa
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:124: syntax error, unexpected '<'
+          </p>
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:127: unknown regexp options - pa
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:128: syntax error, unexpected '<'
+          </p>
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:129: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:130: syntax error, unexpected '<'
+        <div class="text-center table-i
+         ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:131: syntax error, unexpected '<'
+          <p class="description">
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:133: syntax error, unexpected '<', expecting ')'
+          </p>
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:136: unknown regexp options - pa
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:137: syntax error, unexpected '<'
+          </p>
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:140: unknown regexp options - pa
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:141: syntax error, unexpected '<'
+          </p>
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:145: unknown regexp options - pa
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:146: syntax error, unexpected '<'
+          </p>
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:147: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:148: syntax error, unexpected '<'
+        <br>
+         ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:151: syntax error, unexpected '<'
+      <div class="text-center">
+       ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:154: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+afe_append='          <p class="description">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:156: syntax error, unexpected '<', expecting ')'
+          </p>
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:158: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:159: syntax error, unexpected '<'
+      <div class="main-content col-sm
+       ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:159: syntax error, unexpected tIDENTIFIER, expecting ')'
+ss="main-content col-sm-12" id="cart-content">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:160: syntax error, unexpected '<'
+        <div class="shopping-cart" id="
+         ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:160: syntax error, unexpected tIDENTIFIER, expecting ')'
+ <div class="shopping-cart" id="cart-content-list">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:163: syntax error, unexpected '<', expecting ')'
+        </div>
+         ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:164: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:166: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+afe_append='        <div class="text-right">
+                              ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:167: syntax error, unexpected '<'
+          <div class="book-table btn btn-
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:169: syntax error, unexpected '<', expecting ')'
+          </div>
+           ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:170: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:175: unknown regexp option - h
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:175: syntax error, unexpected tINTEGER, expecting ')'
+      </h4>
+          ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:181: unknown regexp options - dv
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:182: syntax error, unexpected '<'
+</section>
+ ^
+/home/sy/Desktop/18_menu/app/views/orders/show.html.erb:182: unterminated regexp meets end of file):
+  
+app/views/orders/show.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/orders/show.html.erb:2: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/orders/show.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/orders/show.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/orders/show.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/orders/show.html.erb:3: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/orders/show.html.erb:4: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/orders/show.html.erb:4: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/orders/show.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/orders/show.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/orders/show.html.erb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/orders/show.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/orders/show.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting ')'
+append='      <p class="status">
+app/views/orders/show.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/orders/show.html.erb:16: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/orders/show.html.erb:19: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/orders/show.html.erb:23: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/orders/show.html.erb:25: syntax error, unexpected '<'
+app/views/orders/show.html.erb:27: syntax error, unexpected '<', expecting ')'
+app/views/orders/show.html.erb:32: unknown regexp options - pa
+app/views/orders/show.html.erb:33: syntax error, unexpected '<'
+app/views/orders/show.html.erb:35: syntax error, unexpected '<', expecting ')'
+app/views/orders/show.html.erb:37: unknown regexp option - p
+app/views/orders/show.html.erb:38: syntax error, unexpected '<'
+app/views/orders/show.html.erb:40: syntax error, unexpected '<'
+app/views/orders/show.html.erb:41: syntax error, unexpected '<'
+app/views/orders/show.html.erb:42: syntax error, unexpected '<'
+app/views/orders/show.html.erb:44: syntax error, unexpected '<', expecting ')'
+app/views/orders/show.html.erb:45: unknown regexp options - dv
+app/views/orders/show.html.erb:46: syntax error, unexpected '<'
+app/views/orders/show.html.erb:47: syntax error, unexpected '<'
+app/views/orders/show.html.erb:47: syntax error, unexpected '<'
+app/views/orders/show.html.erb:48: unknown regexp options - dv
+app/views/orders/show.html.erb:49: syntax error, unexpected '<'
+app/views/orders/show.html.erb:49: syntax error, unexpected '<'
+app/views/orders/show.html.erb:50: unknown regexp options - dv
+app/views/orders/show.html.erb:51: syntax error, unexpected '<'
+app/views/orders/show.html.erb:52: syntax error, unexpected '<'
+app/views/orders/show.html.erb:53: syntax error, unexpected '<'
+app/views/orders/show.html.erb:55: syntax error, unexpected '<', expecting ')'
+app/views/orders/show.html.erb:56: unknown regexp options - dv
+app/views/orders/show.html.erb:58: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/orders/show.html.erb:59: syntax error, unexpected '<'
+app/views/orders/show.html.erb:59: syntax error, unexpected '<'
+app/views/orders/show.html.erb:60: unknown regexp options - dv
+app/views/orders/show.html.erb:61: syntax error, unexpected '<'
+app/views/orders/show.html.erb:61: syntax error, unexpected '<'
+app/views/orders/show.html.erb:64: unknown regexp options - dv
+app/views/orders/show.html.erb:65: syntax error, unexpected '<'
+app/views/orders/show.html.erb:67: syntax error, unexpected '<'
+app/views/orders/show.html.erb:69: unknown regexp options - dv
+app/views/orders/show.html.erb:70: syntax error, unexpected '<'
+app/views/orders/show.html.erb:71: syntax error, unexpected '<'
+app/views/orders/show.html.erb:72: syntax error, unexpected '<'
+app/views/orders/show.html.erb:74: syntax error, unexpected '<', expecting ')'
+app/views/orders/show.html.erb:75: unknown regexp options - dv
+app/views/orders/show.html.erb:77: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/orders/show.html.erb:78: syntax error, unexpected '<'
+app/views/orders/show.html.erb:78: syntax error, unexpected '<'
+app/views/orders/show.html.erb:79: unknown regexp options - dv
+app/views/orders/show.html.erb:80: syntax error, unexpected '<'
+app/views/orders/show.html.erb:80: syntax error, unexpected '<'
+app/views/orders/show.html.erb:83: unknown regexp options - dv
+app/views/orders/show.html.erb:84: syntax error, unexpected '<'
+app/views/orders/show.html.erb:86: syntax error, unexpected '<'
+app/views/orders/show.html.erb:88: unknown regexp options - dv
+app/views/orders/show.html.erb:89: syntax error, unexpected '<'
+app/views/orders/show.html.erb:90: syntax error, unexpected '<'
+app/views/orders/show.html.erb:91: syntax error, unexpected '<'
+app/views/orders/show.html.erb:93: syntax error, unexpected '<', expecting ')'
+app/views/orders/show.html.erb:94: unknown regexp options - dv
+app/views/orders/show.html.erb:96: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/orders/show.html.erb:97: syntax error, unexpected '<'
+app/views/orders/show.html.erb:97: syntax error, unexpected '<'
+app/views/orders/show.html.erb:98: unknown regexp options - dv
+app/views/orders/show.html.erb:99: syntax error, unexpected '<'
+app/views/orders/show.html.erb:99: syntax error, unexpected '<'
+app/views/orders/show.html.erb:102: unknown regexp options - dv
+app/views/orders/show.html.erb:103: syntax error, unexpected '<'
+app/views/orders/show.html.erb:105: syntax error, unexpected '<'
+app/views/orders/show.html.erb:107: unknown regexp options - dv
+app/views/orders/show.html.erb:108: syntax error, unexpected '<'
+app/views/orders/show.html.erb:109: unknown regexp options - dv
+app/views/orders/show.html.erb:110: syntax error, unexpected '<'
+app/views/orders/show.html.erb:113: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/orders/show.html.erb:114: syntax error, unexpected '<'
+app/views/orders/show.html.erb:116: syntax error, unexpected '<', expecting ')'
+app/views/orders/show.html.erb:119: unknown regexp options - pa
+app/views/orders/show.html.erb:120: syntax error, unexpected '<'
+app/views/orders/show.html.erb:123: unknown regexp options - pa
+app/views/orders/show.html.erb:124: syntax error, unexpected '<'
+app/views/orders/show.html.erb:127: unknown regexp options - pa
+app/views/orders/show.html.erb:128: syntax error, unexpected '<'
+app/views/orders/show.html.erb:129: unknown regexp options - dv
+app/views/orders/show.html.erb:130: syntax error, unexpected '<'
+app/views/orders/show.html.erb:131: syntax error, unexpected '<'
+app/views/orders/show.html.erb:133: syntax error, unexpected '<', expecting ')'
+app/views/orders/show.html.erb:136: unknown regexp options - pa
+app/views/orders/show.html.erb:137: syntax error, unexpected '<'
+app/views/orders/show.html.erb:140: unknown regexp options - pa
+app/views/orders/show.html.erb:141: syntax error, unexpected '<'
+app/views/orders/show.html.erb:145: unknown regexp options - pa
+app/views/orders/show.html.erb:146: syntax error, unexpected '<'
+app/views/orders/show.html.erb:147: unknown regexp options - dv
+app/views/orders/show.html.erb:148: syntax error, unexpected '<'
+app/views/orders/show.html.erb:151: syntax error, unexpected '<'
+app/views/orders/show.html.erb:154: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/orders/show.html.erb:156: syntax error, unexpected '<', expecting ')'
+app/views/orders/show.html.erb:158: unknown regexp options - dv
+app/views/orders/show.html.erb:159: syntax error, unexpected '<'
+app/views/orders/show.html.erb:159: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/orders/show.html.erb:160: syntax error, unexpected '<'
+app/views/orders/show.html.erb:160: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/orders/show.html.erb:163: syntax error, unexpected '<', expecting ')'
+app/views/orders/show.html.erb:164: unknown regexp options - dv
+app/views/orders/show.html.erb:166: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/orders/show.html.erb:167: syntax error, unexpected '<'
+app/views/orders/show.html.erb:169: syntax error, unexpected '<', expecting ')'
+app/views/orders/show.html.erb:170: unknown regexp options - dv
+app/views/orders/show.html.erb:175: unknown regexp option - h
+app/views/orders/show.html.erb:175: syntax error, unexpected tINTEGER, expecting ')'
+app/views/orders/show.html.erb:181: unknown regexp options - dv
+app/views/orders/show.html.erb:182: syntax error, unexpected '<'
+app/views/orders/show.html.erb:182: unterminated regexp meets end of file
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.6ms)
+Started GET "/cart" for 127.0.0.1 at 2017-11-26 22:00:53 +0700
+Processing by OrdersController#show as HTML
+  Rendering orders/show.html.erb within layouts/application
+  Rendered orders/_ordering_cart.html.erb (0.7ms)
+  Rendered orders/show.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_cart_text.html.erb (0.4ms)
+  Rendered layouts/_menu_customer.html.erb (1.5ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 310ms (Views: 306.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-26 22:00:58 +0700
+Processing by PagesController#show as HTML
+  Parameters: {"authenticity_token"=>"JoLtP40Ofz563X/MaNelfeWgQRySV9noiuiVbyDjswUrvJaSwPU+0Tt+ExTu+0DvFa7NMRs0+GkZBjUsnHmx1Q==", "page"=>"home"}
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/_slogan.html.erb (6.3ms)
+  Rendered pages/_book_table_online.html.erb (1.5ms)
+  Rendered pages/home.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_cart_text.html.erb (0.4ms)
+  Rendered layouts/_menu_customer.html.erb (2.2ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 311ms (Views: 309.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-26 22:05:13 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_cart_text.html.erb (0.4ms)
+  Rendered layouts/_menu_customer.html.erb (4.5ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 365ms (Views: 360.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2017-11-26 22:05:19 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DeMfx8B2bmaieJc009gOHiCkcPOMCRE0cx5KGwEb4zkA3WRqjY0viePb++xV9OuM0Kr83gVqMLXg8OpYvYHh6Q==", "staff"=>{"email"=>"admin@123.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Login"}
+  [1m[36mStaff Load (1.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["email", "admin@123.com"], ["LIMIT", 1]]
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."email" = $1 LIMIT $2[0m  [["email", "admin@123.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 153ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-26 22:05:19 +0700
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/_slogan.html.erb (5.6ms)
+  Rendered pages/_book_table_online.html.erb (1.6ms)
+  Rendered pages/home.html.erb within layouts/application (10.0ms)
+  [1m[36mStaff Load (0.6ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered layouts/_menu_staff.html.erb (2.1ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 340ms (Views: 338.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admin/orders" for 127.0.0.1 at 2017-11-26 22:05:25 +0700
+Processing by Admin::OrdersController#index as HTML
+  Parameters: {"authenticity_token"=>"zUzFGyhmZkTUVnrOej5ZWPBTKc0lo0Ow1AZ0jAyukc3XZla6RBqCroKuat8LB9CxKurTJhCxv4EbTw/W6wpDww=="}
+  [1m[36mStaff Load (0.5ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/orders/index.html.erb within layouts/application
+  [1m[36mTable Load (0.4ms)[0m  [1m[34mSELECT "tables".* FROM "tables"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.7ms)
+  Rendered admin/orders/_order_index.html.erb (5.2ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.4ms)
+  Rendered admin/orders/_order_index.html.erb (3.6ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (3.4ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (3.6ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.4ms)
+  Rendered admin/orders/_order_index.html.erb (4.7ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (2.0ms)
+  Rendered admin/orders/_order_index.html.erb (6.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.1ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.7ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.4ms)
+  Rendered admin/orders/_order_index.html.erb (5.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.3ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (6.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.4ms)
+  Rendered admin/orders/_order_index.html.erb (4.3ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.5ms)
+  Rendered admin/orders/_order_index.html.erb (5.8ms)
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (3.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (3.5ms)
+  Rendered admin/orders/_order_content.html.erb (85.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  Rendered admin/orders/_order.html.erb (105.7ms)
+  Rendered admin/orders/index.html.erb within layouts/application (106.9ms)
+  Rendered layouts/_menu_staff.html.erb (1.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 534ms (Views: 525.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 22:05:25 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 22:05:25 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Started GET "/0c00bf7579cd612681ca19684d4d8a68.jpg" for 127.0.0.1 at 2017-11-26 22:05:25 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/0c00bf7579cd612681ca19684d4d8a68.jpg"):
+  
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+OrdersChannel is transmitting the subscription confirmation
+OrdersChannel is streaming from orders
+  Rendered collection of /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [153 times] (233.4ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (720.5ms)
+Started GET "/admin/orders" for 127.0.0.1 at 2017-11-26 22:05:34 +0700
+Processing by Admin::OrdersController#index as HTML
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering admin/orders/index.html.erb within layouts/application
+  [1m[36mTable Load (0.4ms)[0m  [1m[34mSELECT "tables".* FROM "tables"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" ORDER BY "orders"."created_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (2.3ms)
+  Rendered admin/orders/_order_index.html.erb (9.6ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTable Load (0.3ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (6.2ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (5.6ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (4.0ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.6ms)
+  Rendered admin/orders/_order_index.html.erb (4.9ms)
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (5.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (4.9ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (4.7ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (4.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (3.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.3ms)
+  Rendered admin/orders/_order_index.html.erb (5.1ms)
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (4.5ms)
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendered admin/orders/_order_status.html.erb (0.2ms)
+  Rendered admin/orders/_order_index.html.erb (2.3ms)
+  Rendered admin/orders/_order_content.html.erb (93.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  Rendered admin/orders/_order.html.erb (121.2ms)
+  Rendered admin/orders/index.html.erb within layouts/application (122.6ms)
+  Rendered layouts/_menu_staff.html.erb (2.1ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 521ms (Views: 507.0ms | ActiveRecord: 6.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 22:05:35 +0700
+OrdersChannel stopped streaming from orders
+Started GET "/cable" for 127.0.0.1 at 2017-11-26 22:05:35 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 22:05:35 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mStaff Load (0.2ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Started GET "/0c00bf7579cd612681ca19684d4d8a68.jpg" for 127.0.0.1 at 2017-11-26 22:05:35 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/0c00bf7579cd612681ca19684d4d8a68.jpg"):
+  
+actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.4) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+OrdersChannel is transmitting the subscription confirmation
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+OrdersChannel is streaming from orders
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered collection of /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [153 times] (174.4ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendering /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/sy/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (634.4ms)
+Started GET "/admin/orders/21" for 127.0.0.1 at 2017-11-26 22:06:29 +0700
+Processing by Admin::OrdersController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering admin/orders/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_info.html.erb (25.1ms)
+  [1m[36mOrderDish Load (0.3ms)[0m  [1m[34mSELECT "order_dishes".* FROM "order_dishes" WHERE "order_dishes"."order_id" = $1[0m  [["order_id", 21]]
+  Rendered admin/orders/_order_item_current.html.erb (3.1ms)
+  Rendered admin/orders/_order_item_footer.html.erb (8.0ms)
+  Rendered admin/orders/_order_item.html.erb (14.0ms)
+  Rendered admin/orders/show.html.erb within layouts/application (41.1ms)
+  Rendered layouts/_menu_staff.html.erb (1.5ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 1284ms (Views: 1277.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/admin/orders/21" for 127.0.0.1 at 2017-11-26 22:06:42 +0700
+Processing by Admin::OrdersController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering admin/orders/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.1ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_info.html.erb (3.1ms)
+  [1m[36mOrderDish Load (0.2ms)[0m  [1m[34mSELECT "order_dishes".* FROM "order_dishes" WHERE "order_dishes"."order_id" = $1[0m  [["order_id", 21]]
+  Rendered admin/orders/_order_item_current.html.erb (2.1ms)
+  Rendered admin/orders/_order_item_footer.html.erb (0.9ms)
+  Rendered admin/orders/_order_item.html.erb (5.2ms)
+  Rendered admin/orders/show.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_menu_staff.html.erb (1.6ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 307ms (Views: 301.9ms | ActiveRecord: 0.9ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2017-11-26 22:06:43 +0700
+OrdersChannel stopped streaming from orders
+Started GET "/admin/orders/21" for 127.0.0.1 at 2017-11-26 22:06:57 +0700
+Processing by Admin::OrdersController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mStaff Load (0.3ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering admin/orders/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_info.html.erb (3.0ms)
+  [1m[36mOrderDish Load (0.2ms)[0m  [1m[34mSELECT "order_dishes".* FROM "order_dishes" WHERE "order_dishes"."order_id" = $1[0m  [["order_id", 21]]
+  Rendered admin/orders/_order_item_current.html.erb (2.0ms)
+  Rendered admin/orders/_order_item_footer.html.erb (0.9ms)
+  Rendered admin/orders/_order_item.html.erb (4.9ms)
+  Rendered admin/orders/show.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_menu_staff.html.erb (1.5ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 7737ms (Views: 7730.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/admin/orders/21" for 127.0.0.1 at 2017-11-26 22:07:49 +0700
+Processing by Admin::OrdersController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  Rendering admin/orders/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTable Load (0.2ms)[0m  [1m[34mSELECT  "tables".* FROM "tables" WHERE "tables"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendered admin/orders/_order_info.html.erb (3.5ms)
+  [1m[36mOrderDish Load (0.3ms)[0m  [1m[34mSELECT "order_dishes".* FROM "order_dishes" WHERE "order_dishes"."order_id" = $1[0m  [["order_id", 21]]
+  Rendered admin/orders/_order_item_current.html.erb (1.9ms)
+  Rendered admin/orders/_order_item_footer.html.erb (0.8ms)
+  Rendered admin/orders/_order_item.html.erb (4.8ms)
+  Rendered admin/orders/show.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_menu_staff.html.erb (1.6ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 308ms (Views: 303.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/staffs/edit" for 127.0.0.1 at 2017-11-26 22:09:37 +0700
+Processing by StaffsController#edit as HTML
+  Parameters: {"authenticity_token"=>"45aRpQ3VXuyNcGB3SriWwufLBWViKDNoKnjqphJGXpP5vAIEYam6BtuIcGY7gR8rPXL/jlc6z1nlMZH89eKMnQ=="}
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering staffs/edit.html.erb within layouts/application
+  Rendered staffs/edit.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_menu_staff.html.erb (1.7ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 288ms (Views: 285.6ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2017-11-26 22:24:09 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"K61d1ThMnRVEijoCu8FeGbWz9TZQbc4JojUwDXHhmMUxh850VDB5/xJyKhPK+NfwbwoP3WV/MjhtfEtXlkVKyw=="}
+  [1m[36mStaff Load (0.4ms)[0m  [1m[34mSELECT  "staffs".* FROM "staffs" WHERE "staffs"."id" = $1 ORDER BY "staffs"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-26 22:24:09 +0700
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/_slogan.html.erb (6.2ms)
+  Rendered pages/_book_table_online.html.erb (16.6ms)
+  Rendered pages/home.html.erb within layouts/application (24.8ms)
+  Rendered layouts/_cart_text.html.erb (0.4ms)
+  Rendered layouts/_menu_customer.html.erb (1.5ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 305ms (Views: 303.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2017-11-26 22:24:12 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_cart_text.html.erb (0.4ms)
+  Rendered layouts/_menu_customer.html.erb (1.6ms)
+  Rendered shared/_flash.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 278ms (Views: 276.6ms | ActiveRecord: 0.0ms)
+
+
